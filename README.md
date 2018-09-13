@@ -1,4 +1,4 @@
-# Stormwater Game
-Stormwater Quality Game using Phaser 3
+# StormwaterGame
+Stormwater Quality Game using Phaser v2.11.0
 
 https://team-luminous.github.io/StormwaterGame/

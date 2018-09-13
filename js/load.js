@@ -1,13 +1,10 @@
 'use strict';
 
-var load = new Phaser.Class({
-    Extends: Phaser.Scene,
-    initialize: function load() {
-        Phaser.Scene.call(this, {key: "load"});
-    },
+var load = {
     preload: function() {
+        game.load.image("titleImages", "assets/TitleImages.png");
     },
-    create: function() {        
-        this.scene.start("title");
+    create: function() {
+        game.state.start("title");
     }
-});
+};
