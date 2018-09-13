@@ -1,2 +1,2 @@
 # StormwaterGame
-Stormwater Quality Game using Phaser 3
+Stormwater Quality Game using Phaser v2.11.0
