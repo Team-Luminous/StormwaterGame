@@ -3,13 +3,10 @@
 var game;
 
 window.onload = function() {
-    var gameConfig = {
-        type: Phaser.AUTO,
-        width: 1024,
-        height: 672,
-        parent: "gameDiv",
-        backgroundColor: 0x000000,
-        scene: [load, title]
-    };
-    game = new Phaser.Game(gameConfig);
-}
+    game = new Phaser.Game(1024, 672, Phaser.AUTO, "gameDiv");
+
+    game.state.add("load", load);
+    game.state.add("title", title);
+
+    game.state.start("load");
+};
