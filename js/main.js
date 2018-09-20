@@ -1,12 +1,21 @@
 'use strict';
 
-var game;
+var WIDTH = 900;
+var HEIGHT = 592;
+
+var Strings = TextModules.EN;
+
+var Game;
 
 window.onload = function() {
-    game = new Phaser.Game(1024, 672, Phaser.AUTO, "gameDiv");
+    Game = new Phaser.Game(WIDTH, HEIGHT, Phaser.AUTO, "gameDiv");
 
-    game.state.add("load", load);
-    game.state.add("title", title);
+    Game.state.add("load", load);
+    Game.state.add("title", title);
+    Game.state.add("intro", intro);
+    Game.state.add("choose", choose);
+    // Game.state.add("find_fix", find_fix);
+    // Game.state.add("protect_pollute", protect_pollute);
 
-    game.state.start("load");
+    Game.state.start("load");
 };
