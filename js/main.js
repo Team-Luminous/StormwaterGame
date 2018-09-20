@@ -13,6 +13,9 @@ window.onload = function() {
     Game.state.add("load", load);
     Game.state.add("title", title);
     Game.state.add("intro", intro);
+    Game.state.add("choose", choose);
+    // Game.state.add("find_fix", find_fix);
+    // Game.state.add("protect_pollute", protect_pollute);
 
     Game.state.start("load");
 };

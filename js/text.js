@@ -1,5 +1,13 @@
 'use strict';
 
+const TextStyle = {
+    Centered: {
+        font: '12pt "Comic Sans MS", cursive, sans-serif',
+        align: 'center'
+    },
+    lineSpacing: -8
+};
+
 const TextModules = {
     EN: {
         Intro1: "HI FRIENDS! I'M\nPROFESSOR DAVIS GREEN.\nWILL YOU HELP ME PREVENT\nSTORMWATER POLLUTION?",
@@ -8,6 +16,7 @@ const TextModules = {
         Intro3_2: "POLLUTANTS ARE THINGS\nTHAT MAKE WATER DIRTY.",
         Intro4_1: "STORMWATER IS NOT\nCLEANED. IT ISN'T TREATED\nBEFORE IT FLOWS TO\nLOCAL CREEKS, WETLANDS\nAND LOCAL WATERWAYS.",
         Intro4_2: "POLLUTED, DIRTY WATER\nCAN MAKE FISH AND\nANIMALS SICK.",
-        Intro5: "LET'S SEE HOW THE SIMPLE\nCHOICES YOU MAKE AFFECT\nTHE WATER QUALITY IN\nLOCAL WETLANDS\nAND WATERWAYS."
+        Intro5: "LET'S SEE HOW THE SIMPLE\nCHOICES YOU MAKE AFFECT\nTHE WATER QUALITY IN\nLOCAL WETLANDS\nAND WATERWAYS.",
+        Choose: "PLAY BOTH GAMES\nTO LEARN MORE ABOUT\nPREVENTING\nSTORMWATER POLLUTION!"
     }
 };

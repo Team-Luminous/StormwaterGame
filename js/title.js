@@ -21,7 +21,6 @@ var title = {
         // Buttons
         this.playButton = this.add.button(0.3 * WIDTH, 0.68 * HEIGHT, "button_play", this.playButtonActions.onClick, this, 0, 0, 1);
         this.playButton.anchor.setTo(0.5, 0.5);
-
         this.add.tween(this.playButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
     },

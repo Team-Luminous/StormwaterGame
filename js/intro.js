@@ -46,53 +46,48 @@ var intro = {
         this.infoBox2.visible = false;
 
         // Speech Text
-        var textStyle = {
-            font: '12pt "Comic Sans MS", cursive, sans-serif',
-            align: 'center'
-        };
-
-        this.speechText1 = this.add.text(0.2 * WIDTH + 0.5, 0.42 * HEIGHT + 0.5, Strings.Intro1, textStyle);
+        this.speechText1 = this.add.text(0.2 * WIDTH + 0.5, 0.42 * HEIGHT + 0.5, Strings.Intro1, TextStyle.Centered);
         this.speechText1.anchor.setTo(0.5, 0.5);
-        this.speechText1.lineSpacing = -8;
+        this.speechText1.lineSpacing = TextStyle.lineSpacing;
         
-        this.speechText2 = this.add.text(0.2 * WIDTH + 0.5, 0.42 * HEIGHT + 0.5, Strings.Intro2, textStyle);
+        this.speechText2 = this.add.text(0.2 * WIDTH + 0.5, 0.42 * HEIGHT + 0.5, Strings.Intro2, TextStyle.Centered);
         this.speechText2.anchor.setTo(0.5, 0.5);
-        this.speechText2.lineSpacing = -8;
+        this.speechText2.lineSpacing = TextStyle.lineSpacing;
         this.speechText2.addFontWeight('bold', 0);
         this.speechText2.addFontWeight('normal', 10);
         this.speechText2.visible = false;
 
-        this.speechText3_1 = this.add.text(0.2 * WIDTH + 0.5, 0.48 * HEIGHT + 0.5, Strings.Intro3_1, textStyle);
+        this.speechText3_1 = this.add.text(0.2 * WIDTH + 0.5, 0.48 * HEIGHT + 0.5, Strings.Intro3_1, TextStyle.Centered);
         this.speechText3_1.anchor.setTo(0.5, 0.5);
-        this.speechText3_1.lineSpacing = -8;
+        this.speechText3_1.lineSpacing = TextStyle.lineSpacing;
         this.speechText3_1.addFontWeight('bold', 0);
         this.speechText3_1.addFontWeight('normal', 17);
         this.speechText3_1.addFontWeight('bold', 28);
         this.speechText3_1.addFontWeight('normal', 39);
         this.speechText3_1.visible = false;
 
-        this.speechText3_2 = this.add.text(0.8 * WIDTH + 0.5, 0.2 * HEIGHT + 0.5, Strings.Intro3_2, textStyle);
+        this.speechText3_2 = this.add.text(0.8 * WIDTH + 0.5, 0.2 * HEIGHT + 0.5, Strings.Intro3_2, TextStyle.Centered);
         this.speechText3_2.anchor.setTo(0.5, 0.0);
-        this.speechText3_2.lineSpacing = -8;
+        this.speechText3_2.lineSpacing = TextStyle.lineSpacing;
         this.speechText3_2.addFontWeight('bold', 0);
         this.speechText3_2.addFontWeight('normal', 10);
         this.speechText3_2.addFontWeight('bold', 37);
         this.speechText3_2.addFontWeight('normal', 42);
         this.speechText3_2.visible = false;
         
-        this.speechText4_1 = this.add.text(0.2 * WIDTH + 0.5, 0.48 * HEIGHT + 0.5, Strings.Intro4_1, textStyle);
+        this.speechText4_1 = this.add.text(0.2 * WIDTH + 0.5, 0.48 * HEIGHT + 0.5, Strings.Intro4_1, TextStyle.Centered);
         this.speechText4_1.anchor.setTo(0.5, 0.5);
-        this.speechText4_1.lineSpacing = -8;
+        this.speechText4_1.lineSpacing = TextStyle.lineSpacing;
         this.speechText4_1.visible = false;
 
-        this.speechText4_2 = this.add.text(0.8 * WIDTH + 0.5, 0.27 * HEIGHT + 0.5, Strings.Intro4_2, textStyle);
+        this.speechText4_2 = this.add.text(0.8 * WIDTH + 0.5, 0.27 * HEIGHT + 0.5, Strings.Intro4_2, TextStyle.Centered);
         this.speechText4_2.anchor.setTo(0.5, 0.0);
-        this.speechText4_2.lineSpacing = -8;
+        this.speechText4_2.lineSpacing = TextStyle.lineSpacing;
         this.speechText4_2.visible = false;
         
-        this.speechText5 = this.add.text(0.2 * WIDTH + 0.5, 0.48 * HEIGHT + 0.5, Strings.Intro5, textStyle);
+        this.speechText5 = this.add.text(0.2 * WIDTH + 0.5, 0.48 * HEIGHT + 0.5, Strings.Intro5, TextStyle.Centered);
         this.speechText5.anchor.setTo(0.5, 0.5);
-        this.speechText5.lineSpacing = -8;
+        this.speechText5.lineSpacing = TextStyle.lineSpacing;
         this.speechText5.visible = false;
 
         // Buttons

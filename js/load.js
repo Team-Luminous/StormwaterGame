@@ -25,6 +25,7 @@ var load = {
         // Speech Boxes
         this.load.image("speechbox_1", "assets/speechbox_1.png");
         this.load.image("speechbox_2", "assets/speechbox_2.png");
+        this.load.image("speechbox_3", "assets/speechbox_3.png");
 
         // Info Boxes
         this.load.image("infobox_intro3", "assets/infobox_intro3.png");
@@ -32,6 +33,8 @@ var load = {
 
         // Buttons
         this.load.spritesheet("button_play", "assets/button_play.png", 116, 116);
+        this.load.spritesheet("button_ff", "assets/button_ff.png", 212, 212);
+        this.load.spritesheet("button_pp", "assets/button_pp.png", 212, 212);
 
     },
     create: function() {
