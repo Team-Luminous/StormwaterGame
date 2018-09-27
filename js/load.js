@@ -5,6 +5,7 @@ var load = {
 
         // Backgrounds
         this.load.image("background_1", "assets/background_1.png");
+        this.load.image("background_2", "assets/background_2.png");
 
         // Clouds
         this.load.image("cloud_1", "assets/cloud_1.png");
@@ -41,6 +42,6 @@ var load = {
 
     },
     create: function() {
-        this.state.start("title");
+        this.state.start("ppquestion");
     }
 };

@@ -3,10 +3,7 @@
 var WIDTH = 900;
 var HEIGHT = 592;
 
-var Strings = TextModules.EN;
-
 var Game;
-
 window.onload = function() {
     Game = new Phaser.Game(WIDTH, HEIGHT, Phaser.AUTO, "gameDiv");
 
@@ -14,8 +11,7 @@ window.onload = function() {
     Game.state.add("title", title);
     Game.state.add("intro", intro);
     Game.state.add("choose", choose);
-    // Game.state.add("find_fix", find_fix);
-    // Game.state.add("protect_pollute", protect_pollute);
+    Game.state.add("ppquestion", ppquestion);
 
     Game.state.start("load");
 };
