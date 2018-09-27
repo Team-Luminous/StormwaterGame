@@ -36,6 +36,9 @@ var load = {
         this.load.spritesheet("button_ff", "assets/button_ff.png", 212, 212);
         this.load.spritesheet("button_pp", "assets/button_pp.png", 212, 212);
 
+        // Audio
+        this.load.audio("title_music", "audio/JoyInTheWorldNew.mp3");
+
     },
     create: function() {
         this.state.start("title");
