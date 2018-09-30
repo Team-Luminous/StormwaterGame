@@ -23,9 +23,6 @@ var TitleState = {
         this.playButton.anchor.setTo(0.5, 0.5);
         this.add.tween(this.playButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
-        // Audio
-        this.titleMusic = this.add.audio("title_music", 0.2);
-        this.titleMusic.loopFull();
     },
     update: function() {
         updateCloudSprites(this);

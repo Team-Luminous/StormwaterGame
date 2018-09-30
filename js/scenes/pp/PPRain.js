@@ -8,8 +8,8 @@ var PPRainState = {
         // Background
         this.backgroundSprite = this.add.sprite(0, 0, "background_1");
 
-        this.time.events.add(200, function() { this.state.start("PPResultState"); }, this);
-       
+        // this.time.events.add(200, function() { this.state.start("PPResultState"); }, this);
+        this.state.start("PPResultState");
     },
     update: function() {
     }

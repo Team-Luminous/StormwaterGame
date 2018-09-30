@@ -66,8 +66,8 @@ var PPResultState = {
     },
     nextButtonActions: {
         onClick: function() {
-            if(PPGame.questionId < 4) {
-                PPGame.questionId++;
+            if(PPGame.questionsCompleted < 4) {
+                PPGame.questionId = PPGame.questionOrder[++PPGame.questionsCompleted];
                 this.state.start("PPQuestionState");
             }
             else {
