@@ -3,19 +3,19 @@
 var WIDTH = 900;
 var HEIGHT = 592;
 
-var Strings = TextModules.EN;
-
 var Game;
-
 window.onload = function() {
     Game = new Phaser.Game(WIDTH, HEIGHT, Phaser.AUTO, "gameDiv");
 
-    Game.state.add("load", load);
-    Game.state.add("title", title);
-    Game.state.add("intro", intro);
-    Game.state.add("choose", choose);
-    // Game.state.add("find_fix", find_fix);
-    // Game.state.add("protect_pollute", protect_pollute);
+    Game.state.add("LoadState", LoadState);
+    Game.state.add("TitleState", TitleState);
+    Game.state.add("IntroState", IntroState);
+    Game.state.add("ChooseGameState", ChooseGameState);
 
-    Game.state.start("load");
+    Game.state.add("PPQuestionState", PPQuestionState);
+    Game.state.add("PPRainState", PPRainState);
+    Game.state.add("PPResultState", PPResultState);
+    Game.state.add("PPScoreState", PPScoreState);
+
+    Game.state.start("LoadState");
 };

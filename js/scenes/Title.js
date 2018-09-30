@@ -1,6 +1,6 @@
 'use strict';
 
-var title = {
+var TitleState = {
     preload: function() {
     },
     create: function() {
@@ -32,7 +32,7 @@ var title = {
     },
     playButtonActions: {
         onClick: function() {
-            this.state.start("intro");
+            this.state.start("IntroState");
         }
     }
 };

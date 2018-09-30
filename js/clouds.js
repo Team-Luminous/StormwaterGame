@@ -2,6 +2,7 @@
 
 var CLOUD_SPEED = 0.0003;
 var CLOUD_MARGIN = 0.5;
+
 var clouds = [
     { x: 0.02, y: 0.04 },
     { x: 0.66, y: 0.18 },

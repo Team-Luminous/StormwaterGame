@@ -1,6 +1,6 @@
 'use strict';
 
-var choose = {
+var ChooseGameState = {
     preload: function() {
     },
     create: function() {
@@ -21,7 +21,7 @@ var choose = {
         this.speechBox1.anchor.setTo(0.44, 0.5);
 
         // Speech Text
-        this.speechText1 = this.add.text(0.2 * WIDTH + 0.5, 0.66 * HEIGHT + 0.5, Strings.Choose, TextStyle.Centered);
+        this.speechText1 = this.add.text(0.2 * WIDTH + 0.5, 0.66 * HEIGHT + 0.5, TextData.chooseGame, TextStyle.centered);
         this.speechText1.anchor.setTo(0.5, 0.5);
         this.speechText1.lineSpacing = TextStyle.lineSpacing;
         
@@ -40,12 +40,12 @@ var choose = {
     },
     ffButtonActions: {
         onClick: function() {
-            // this.state.start("find_fix");
+            // this.state.start("");
         }
     },
     ppButtonActions: {
         onClick: function() {
-            // this.state.start("protect_pollute");
+            this.state.start("PPQuestionState");
         }
     }
 };

@@ -1,6 +1,6 @@
 'use strict';
 
-var intro = {
+var IntroState = {
     preload: function() {
     },
     create: function() {
@@ -46,18 +46,20 @@ var intro = {
         this.infoBox2.visible = false;
 
         // Speech Text
-        this.speechText1 = this.add.text(0.2 * WIDTH + 0.5, 0.42 * HEIGHT + 0.5, Strings.Intro1, TextStyle.Centered);
+        this.speechText1 = this.add.text(0.2 * WIDTH, 0.42 * HEIGHT, TextData.intro[0], TextStyle.centered);
         this.speechText1.anchor.setTo(0.5, 0.5);
         this.speechText1.lineSpacing = TextStyle.lineSpacing;
+        this.speechText1.resolution = 2;
         
-        this.speechText2 = this.add.text(0.2 * WIDTH + 0.5, 0.42 * HEIGHT + 0.5, Strings.Intro2, TextStyle.Centered);
+        this.speechText2 = this.add.text(0.2 * WIDTH, 0.42 * HEIGHT, TextData.intro[1], TextStyle.centered);
         this.speechText2.anchor.setTo(0.5, 0.5);
         this.speechText2.lineSpacing = TextStyle.lineSpacing;
         this.speechText2.addFontWeight('bold', 0);
         this.speechText2.addFontWeight('normal', 10);
         this.speechText2.visible = false;
+        this.speechText2.resolution = 2;
 
-        this.speechText3_1 = this.add.text(0.2 * WIDTH + 0.5, 0.48 * HEIGHT + 0.5, Strings.Intro3_1, TextStyle.Centered);
+        this.speechText3_1 = this.add.text(0.2 * WIDTH, 0.48 * HEIGHT, TextData.intro[2][0], TextStyle.centered);
         this.speechText3_1.anchor.setTo(0.5, 0.5);
         this.speechText3_1.lineSpacing = TextStyle.lineSpacing;
         this.speechText3_1.addFontWeight('bold', 0);
@@ -65,8 +67,9 @@ var intro = {
         this.speechText3_1.addFontWeight('bold', 28);
         this.speechText3_1.addFontWeight('normal', 39);
         this.speechText3_1.visible = false;
+        this.speechText3_1.resolution = 2;
 
-        this.speechText3_2 = this.add.text(0.8 * WIDTH + 0.5, 0.2 * HEIGHT + 0.5, Strings.Intro3_2, TextStyle.Centered);
+        this.speechText3_2 = this.add.text(0.8 * WIDTH, 0.2 * HEIGHT, TextData.intro[2][1], TextStyle.centered);
         this.speechText3_2.anchor.setTo(0.5, 0.0);
         this.speechText3_2.lineSpacing = TextStyle.lineSpacing;
         this.speechText3_2.addFontWeight('bold', 0);
@@ -74,21 +77,25 @@ var intro = {
         this.speechText3_2.addFontWeight('bold', 37);
         this.speechText3_2.addFontWeight('normal', 42);
         this.speechText3_2.visible = false;
+        this.speechText3_2.resolution = 2;
         
-        this.speechText4_1 = this.add.text(0.2 * WIDTH + 0.5, 0.48 * HEIGHT + 0.5, Strings.Intro4_1, TextStyle.Centered);
+        this.speechText4_1 = this.add.text(0.2 * WIDTH, 0.48 * HEIGHT, TextData.intro[3][0], TextStyle.centered);
         this.speechText4_1.anchor.setTo(0.5, 0.5);
         this.speechText4_1.lineSpacing = TextStyle.lineSpacing;
         this.speechText4_1.visible = false;
+        this.speechText4_1.resolution = 2;
 
-        this.speechText4_2 = this.add.text(0.8 * WIDTH + 0.5, 0.27 * HEIGHT + 0.5, Strings.Intro4_2, TextStyle.Centered);
+        this.speechText4_2 = this.add.text(0.8 * WIDTH, 0.27 * HEIGHT, TextData.intro[3][1], TextStyle.centered);
         this.speechText4_2.anchor.setTo(0.5, 0.0);
         this.speechText4_2.lineSpacing = TextStyle.lineSpacing;
         this.speechText4_2.visible = false;
+        this.speechText4_2.resolution = 2;
         
-        this.speechText5 = this.add.text(0.2 * WIDTH + 0.5, 0.48 * HEIGHT + 0.5, Strings.Intro5, TextStyle.Centered);
+        this.speechText5 = this.add.text(0.2 * WIDTH, 0.48 * HEIGHT, TextData.intro[4], TextStyle.centered);
         this.speechText5.anchor.setTo(0.5, 0.5);
         this.speechText5.lineSpacing = TextStyle.lineSpacing;
         this.speechText5.visible = false;
+        this.speechText5.resolution = 2;
 
         // Buttons
         this.nextButton = this.add.button(0.5 * WIDTH, 0.2 * HEIGHT, "button_play", this.nextButtonActions.onClick, this, 0, 0, 1);
@@ -156,7 +163,7 @@ var intro = {
                 this.speechText5.visible = true;
                 break;
             case 5:
-                this.state.start("choose");
+                this.state.start("ChooseGameState");
                 break;
         }
 
