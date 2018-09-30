@@ -1,11 +1,13 @@
 'use strict';
 
-var load = {
+var LoadState = {
     preload: function() {
 
         // Backgrounds
         this.load.image("background_1", "assets/background_1.png");
-        this.load.image("background_2", "assets/background_2.png");
+        this.load.image("background_2", "assets/background_2.png");  
+        this.load.image("background_3", "assets/background_3.png");  
+        this.load.image("background_4", "assets/background_4.png");  
 
         // Clouds
         this.load.image("cloud_1", "assets/cloud_1.png");
@@ -22,11 +24,14 @@ var load = {
         this.load.image("professor_4", "assets/professor_4.png");
         this.load.image("professor_5", "assets/professor_5.png");
         this.load.image("professor_6", "assets/professor_6.png");
+        this.load.image("professor_7", "assets/professor_7.png");
 
         // Speech Boxes
         this.load.image("speechbox_1", "assets/speechbox_1.png");
         this.load.image("speechbox_2", "assets/speechbox_2.png");
         this.load.image("speechbox_3", "assets/speechbox_3.png");
+        this.load.image("speechbox_4", "assets/speechbox_4.png");
+        this.load.image("speechbox_5", "assets/speechbox_5.png");
 
         // Info Boxes
         this.load.image("infobox_intro3", "assets/infobox_intro3.png");
@@ -34,14 +39,33 @@ var load = {
 
         // Buttons
         this.load.spritesheet("button_play", "assets/button_play.png", 116, 116);
+        this.load.spritesheet("button_home", "assets/button_home.png", 116, 116);
+        this.load.spritesheet("button_next", "assets/button_next.png", 152, 58);
         this.load.spritesheet("button_ff", "assets/button_ff.png", 212, 212);
         this.load.spritesheet("button_pp", "assets/button_pp.png", 212, 212);
 
         // Audio
         this.load.audio("title_music", "audio/JoyInTheWorldNew.mp3");
 
+        // Protect or Pollute
+        this.load.image("pp_question_text", "assets/pp/pp_question_text.png");
+        this.load.image("pp_wetlands", "assets/pp/pp_wetlands.png");
+        this.load.image("pp_score_title", "assets/pp/pp_score_title.png");
+
+        for(var i=0; i<PPGameData.levels.length; ++i) {
+            var level = PPGameData.levels[i];
+            for(var j=0; j<level.length; ++j) {
+                var question = level[j];
+                this.load.image(question.name, "assets/pp/level_" + (i + 1) + "/question_" + (j + 1) + "/" + question.name + ".png");                
+                for(var k=0; k<question.options.length; ++k) {
+                    var option = question.options[k];
+                    this.load.image(option.name, "assets/pp/level_" + (i + 1) + "/question_" + (j + 1) + "/" + option.name + ".png")
+                }
+            }
+        }
+
     },
     create: function() {
-        this.state.start("ppquestion");
+        this.state.start("TitleState");
     }
 };
