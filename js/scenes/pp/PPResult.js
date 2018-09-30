@@ -51,8 +51,16 @@ var PPResultState = {
         // Buttons
         this.nextButton = this.add.button(0.888 * WIDTH, 0.3 * HEIGHT, "button_next", this.nextButtonActions.onClick, this, 0, 0, 1);
         this.nextButton.anchor.setTo(0.5, 0.5);
+        this.nextButton.visible = false;
         this.add.tween(this.nextButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
+        // Start Animation
+        this.nextDelay = 1000;
+        this.animationSpeed = 500;
+
+        this.add.tween(this.lowerText.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+        this.add.tween(this.speechBox.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+        this.time.events.add(this.nextDelay, function() { this.nextButton.visible = true; }, this);
     },
     update: function() {
     },

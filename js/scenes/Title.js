@@ -25,7 +25,7 @@ var TitleState = {
 
         // Audio
         this.titleMusic = this.add.audio("title_music", 0.2);
-        this.titleMusic.play();
+        this.titleMusic.loopFull();
     },
     update: function() {
         updateCloudSprites(this);

@@ -4,8 +4,6 @@ var ChooseGameState = {
     preload: function() {
     },
     create: function() {
-        
-        this.subSceneIndex = 0;
 
         // Background
         this.backgroundSprite = this.add.sprite(0, 0, "background_1");
@@ -34,6 +32,11 @@ var ChooseGameState = {
         this.ppButton.anchor.setTo(0.5, 0.5);
         this.add.tween(this.ppButton.scale).to({ x: 0.9, y: 0.9 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
+        // Start Animation        
+        this.animationSpeed = 500;
+
+        this.add.tween(this.speechText1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+        this.add.tween(this.speechBox1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
     },
     update: function() {
         updateCloudSprites(this);

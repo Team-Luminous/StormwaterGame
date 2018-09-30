@@ -38,6 +38,12 @@ var PPScoreState = {
 
         this.add.tween(this.homeButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
+        // Start Animation
+        this.animationSpeed = 500;
+
+        this.add.tween(this.scoreText.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+        this.add.tween(this.speechBox.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+
         // Reset PPGame
         PPGame.reset();
     },
