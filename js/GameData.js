@@ -1,17 +1,34 @@
 'use strict';
 
+/**
+ * Randomize array element order in-place.
+ * Using Durstenfeld shuffle algorithm.
+ * <https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array>
+ * @author Laurens Holst
+ */
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
 var PPGame = {
-    score: 0,
-    levelId: 0,
-    questionId: 0,
-    chosenOptionId: 0,
     reset: function() {
         this.score = 0;
         this.levelId = 0;
-        this.questionId = 0;
+
+        this.questionsCompleted = 0;
+        this.questionOrder = shuffleArray([0, 1, 2, 3, 4]);
+        this.questionId = this.questionOrder[0];
+
         this.chosenOptionId = 0;
     }
 };
+PPGame.reset();
 
 const TextStyle = {
     centered: {

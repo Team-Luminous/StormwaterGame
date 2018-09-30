@@ -9,6 +9,16 @@ var PPQuestionState = {
         var question = level[PPGame.questionId];
         var options = question.options;
 
+        // Randomize options
+        var randomOptions = [];
+        for(var i=0; i<options.length; ++i) {
+            randomOptions.push({
+                id: i,
+                obj: options[i]
+            });
+        }
+        shuffleArray(randomOptions);
+
         // Background
         this.backgroundSprite = this.add.sprite(0, 0, "background_2");
 
@@ -20,15 +30,15 @@ var PPQuestionState = {
 
         // Choice Buttons
         var buttonWidth = WIDTH * (options.length == 3 ? 0.33 : 0.42);
-        for(var i=0; i<options.length; ++i) {
+        for(var i=0; i<randomOptions.length; ++i) {
             var onClick = function(ref) {
                 PPGame.chosenOptionId = ref.optionIndex;
                 this.state.start("PPRainState");
             };
-            var xOffset = 0.5 * WIDTH - (buttonWidth * (options.length - 1)) * 0.5 + buttonWidth * i;
-            var optionButton = this.add.button(xOffset, 0.68 * HEIGHT, options[i].name, onClick, this, 0, 0, 0);
+            var xOffset = 0.5 * WIDTH - (buttonWidth * (randomOptions.length - 1)) * 0.5 + buttonWidth * i;
+            var optionButton = this.add.button(xOffset, 0.68 * HEIGHT, randomOptions[i].obj.name, onClick, this, 0, 0, 0);
             optionButton.anchor.setTo(0.5, 0.5);
-            optionButton.optionIndex = i;
+            optionButton.optionIndex = randomOptions[i].id;
             this.add.tween(optionButton.scale).to({ x: 0.95, y: 0.95 }, 600, "Linear", true).yoyo(true, 0).loop(true);
         }
     },

@@ -66,6 +66,11 @@ var LoadState = {
 
     },
     create: function() {
+        
+        // Audio
+        this.titleMusic = this.add.audio("title_music", 0.2);
+        this.titleMusic.loopFull();
+
         this.state.start("TitleState");
     }
 };

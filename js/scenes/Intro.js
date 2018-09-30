@@ -100,8 +100,16 @@ var IntroState = {
         // Buttons
         this.nextButton = this.add.button(0.5 * WIDTH, 0.2 * HEIGHT, "button_play", this.nextButtonActions.onClick, this, 0, 0, 1);
         this.nextButton.anchor.setTo(0.5, 0.5);
-
+        this.nextButton.visible = false;
         this.add.tween(this.nextButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
+
+        // Start Animation
+        this.nextDelay = 1000;
+        this.animationSpeed = 500;
+
+        this.add.tween(this.speechText1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+        this.add.tween(this.speechBox1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+        this.time.events.add(this.nextDelay, function() { this.nextButton.visible = true; }, this);
 
     },
     update: function() {
@@ -116,23 +124,31 @@ var IntroState = {
             case 0:
                 this.professorSprite1.visible = false;
                 this.speechText1.visible = false;
+
+                this.nextButton.visible = false;
                 break;
             case 1:
                 this.professorSprite2.visible = false;
                 this.speechBox1.visible = false;
                 this.speechText2.visible = false;
+                
+                this.nextButton.visible = false;
                 break;
             case 2:
                 this.professorSprite3.visible = false;
                 this.infoBox1.visible = false;
                 this.speechText3_1.visible = false;
                 this.speechText3_2.visible = false;
+                
+                this.nextButton.visible = false;
                 break;
             case 3:
                 this.professorSprite4.visible = false;
                 this.infoBox2.visible = false;
                 this.speechText4_1.visible = false;
                 this.speechText4_2.visible = false;
+
+                this.nextButton.visible = false;
                 break;
         }
 
@@ -141,9 +157,14 @@ var IntroState = {
 
         // After changing subscene
         switch(this.subSceneIndex) {
-            case 1:
+            case 1:                
                 this.professorSprite2.visible = true;
-                this.speechText2.visible = true;
+                this.speechText2.visible = true;   
+
+                this.add.tween(this.speechText2.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+                this.add.tween(this.speechBox1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+
+                this.time.events.add(this.nextDelay, function() { this.nextButton.visible = true; }, this);
                 break;
             case 2:
                 this.professorSprite3.visible = true;
@@ -151,16 +172,35 @@ var IntroState = {
                 this.infoBox1.visible = true;
                 this.speechText3_1.visible = true;
                 this.speechText3_2.visible = true;
+
+                this.add.tween(this.speechBox2.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+                this.add.tween(this.infoBox1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+                this.add.tween(this.speechText3_1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+                this.add.tween(this.speechText3_2.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+
+                this.time.events.add(this.nextDelay, function() { this.nextButton.visible = true; }, this);
                 break;
             case 3:
                 this.professorSprite4.visible = true;
                 this.infoBox2.visible = true;
                 this.speechText4_1.visible = true;
                 this.speechText4_2.visible = true;
+
+                this.add.tween(this.speechBox2.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+                this.add.tween(this.infoBox2.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+                this.add.tween(this.speechText4_1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+                this.add.tween(this.speechText4_2.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+
+                this.time.events.add(this.nextDelay, function() { this.nextButton.visible = true; }, this);
                 break;
             case 4:
                 this.professorSprite5.visible = true;
                 this.speechText5.visible = true;
+
+                this.add.tween(this.speechBox2.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+                this.add.tween(this.speechText5.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+
+                this.time.events.add(this.nextDelay, function() { this.nextButton.visible = true; }, this);
                 break;
             case 5:
                 this.state.start("ChooseGameState");
