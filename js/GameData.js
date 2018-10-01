@@ -32,19 +32,19 @@ PPGame.reset();
 
 const TextStyle = {
     centered: {
-        font: '12pt "Comic Sans MS", cursive, sans-serif',
+        font: '12pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
         align: 'center'
     },
     centeredLarge: {
-        font: '14pt "Comic Sans MS", cursive, sans-serif',
+        font: '14pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
         align: 'center'
     },
     centeredExtraLarge: {
-        font: '16pt "Comic Sans MS", cursive, sans-serif',
+        font: '16pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
         align: 'center'
     },
     centeredHeader: {
-        font: '28pt "Comic Sans MS", cursive, sans-serif',
+        font: '28pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
         align: 'center'
     },
     lineSpacing: -8
