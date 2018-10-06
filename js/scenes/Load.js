@@ -49,8 +49,26 @@ var LoadState = {
 
         // Protect or Pollute
         this.load.image("pp_question_text", "assets/pp/pp_question_text.png");
-        this.load.image("pp_wetlands", "assets/pp/pp_wetlands.png");
         this.load.image("pp_score_title", "assets/pp/pp_score_title.png");
+
+        // Wetlands
+        this.load.image("pp_wetlands_background", "assets/pp/result/pp_wetlands_background.png");
+        this.load.image("pp_wetlands_foreground", "assets/pp/result/pp_wetlands_foreground.png");
+        this.load.image("pp_wetlands_water", "assets/pp/result/pp_wetlands_water.png");
+        this.load.image("pp_wetlands_overlay_fertilizer", "assets/pp/result/pp_wetlands_overlay_fertilizer.png");
+        this.load.image("pp_wetlands_overlay_mud", "assets/pp/result/pp_wetlands_overlay_mud.png");
+        this.load.image("pp_wetlands_overlay_oil", "assets/pp/result/pp_wetlands_overlay_oil.png");
+        this.load.image("pp_wetlands_overlay_paint", "assets/pp/result/pp_wetlands_overlay_paint.png");
+        this.load.image("pp_wetlands_cloud1", "assets/pp/result/pp_wetlands_cloud1.png");
+        this.load.image("pp_wetlands_cloud2", "assets/pp/result/pp_wetlands_cloud2.png");
+        this.load.image("pp_wetlands_fish", "assets/pp/result/pp_wetlands_fish.png");
+        this.load.image("pp_wetlands_lilypads", "assets/pp/result/pp_wetlands_lilypads.png");
+        this.load.image("pp_wetlands_bottle", "assets/pp/result/pp_wetlands_bottle.png");
+        this.load.image("pp_wetlands_deadfish", "assets/pp/result/pp_wetlands_deadfish.png");
+        this.load.image("pp_wetlands_trash", "assets/pp/result/pp_wetlands_trash.png");
+        this.load.image("pp_wetlands_bubble", "assets/pp/result/pp_wetlands_bubble.png");
+        this.load.image("pp_wetlands_leaves", "assets/pp/result/pp_wetlands_leaves.png");
+        this.load.image("pp_wetlands_mulch", "assets/pp/result/pp_wetlands_mulch.png");
 
         for(var i=0; i<PPGameData.levels.length; ++i) {
             var level = PPGameData.levels[i];
