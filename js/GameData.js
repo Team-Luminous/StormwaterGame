@@ -83,6 +83,17 @@ const PPGameData = {
                     {
                         name: "pp_1_1a",
                         correct: false,
+                        wetlands: {
+                            overlay: 1,
+                            lilypad: true,
+                            aliveFish: false,
+                            deadFish: true,
+                            soap: true,
+                            mulch: false,
+                            leaves: false,
+                            trash: false,
+                            bottle: false
+                        },
                         resultUpperText: "THAT SENT SOAP AND DIRTY WATER\nINTO THE GUTTER, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
                         resultLowerText: "NEXT TIME, USE A CAR WASH FACILITY-WHERE THE DIRTY\nWATER IS SENT TO THE SEWER TO BE CLEANED.\n\n" +
                                         "IF YOU WASH YOUR CAR AT HOME, USE A SMALL AMOUNT OF\nWATER AND HAVE THE DIRTY WATER FLOW INTO YOUR YARD-JUST\n" +
@@ -91,6 +102,17 @@ const PPGameData = {
                     {
                         name: "pp_1_1b",
                         correct: true,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: true,
+                            deadFish: false,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: false,
+                            bottle: false
+                        },
                         resultUpperText: "YOU PREVENTED POLLUTION AND KEPT\nTHE LOCAL WATERWAYS CLEAN!",
                         resultLowerText: "A CAR WASH FACILITY IS A GREAT CHOICE BECAUSE THE\nDIRTY WATER IS SENT TO THE SEWER TO BE CLEANED.\n\n" + 
                                         "IF YOU WASH YOUR CAR AT HOME, USE A SMALL AMOUNT OF\nWATER AND HAVE THE DIRTY WATER FLOW INTO YOUR YARD."
@@ -98,6 +120,17 @@ const PPGameData = {
                     {
                         name: "pp_1_1c",
                         correct: true,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: true,
+                            deadFish: false,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: false,
+                            bottle: false
+                        },
                         resultUpperText: "YOU PREVENTED POLLUTION AND KEPT\nTHE LOCAL WATERWAYS CLEAN!",
                         resultLowerText: "IF YOU WASH YOUR CAR AT HOME, USE A SMALL AMOUNT OF\nWATER AND HAVE THE DIRTY WATER FLOW INTO YOUR YARD.\n\n" + 
                                         "A CAR WASH FACILITY IS ANOTHER GREAT CHOICE BECAUSE THE\nDIRTY WATER IS SENT TO THE SEWER TO BE CLEANED."
@@ -110,6 +143,17 @@ const PPGameData = {
                     {
                         name: "pp_1_2a",
                         correct: false,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: false,
+                            deadFish: true,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: false,
+                            bottle: false
+                        },
                         resultUpperText: "THAT SENT PET WASTE INTO THE GUTTERS, DOWN THE\nSTORMDRAIN AND POLLUTED LOCAL WATERWAYS!",
                         resultLowerText: "PET WASTE CONTAINS HARMFUL BACTERIA THAT CAN\nKILL FISH AND MAKE OTHER ANIMALS SICK.\n\n" +
                                         "ALWAYS PICK UP PET WASTE AND PLACE IT IN THE TRASH."
@@ -117,6 +161,17 @@ const PPGameData = {
                     {
                         name: "pp_1_2b",
                         correct: true,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: true,
+                            deadFish: false,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: false,
+                            bottle: false
+                        },
                         resultUpperText: "YOU PREVENTED POLLUTION AND KEPT\nTHE LOCAL WATERWAYS CLEAN!",
                         resultLowerText: "PET WASTE CONTAINS HARMFUL BACTERIA THAT CAN\nKILL FISH AND MAKE OTHER ANIMALS SICK.\n\n" +
                                         "ALWAYS PICK UP PET WASTE AND PLACE IT IN THE TRASH."
@@ -129,12 +184,34 @@ const PPGameData = {
                     {
                         name: "pp_1_3a",
                         correct: true,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: true,
+                            deadFish: false,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: false,
+                            bottle: false
+                        },
                         resultUpperText: "YOU PREVENTED POLLUTION AND KEPT\nTHE LOCAL WATERWAYS CLEAN!",
                         resultLowerText: "IF WASTE IS NOT PLACED IN A BIN WITH A CLOSED LID, IT\nCAN BE BLOWN BY WIND OR WASHED AWAY BY RAIN INTO\nSTORMDRAINS, WHERE IT WILL FLOW OUT TO LOCAL WATERWAYS."
                     },
                     {
                         name: "pp_1_3b",
                         correct: false,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: true,
+                            deadFish: false,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: false,
+                            bottle: true
+                        },
                         resultUpperText: "THAT SENT THE BOTTLE INTO THE GUTTER, DOWN THE\nSTORMDRAIN AND POLLUTED LOCAL WATERWAYS!",
                         resultLowerText: "IF WASTE IS PLACED ON THE GROUND IT CAN BE BLOWN\nBY WIND OR WASHED AWAY BY RAIN INTO STORMDRAINS,\n" +
                                         "WHERE IT WILL FLOW OUT TO LOCAL WATERWAYS.\n\nNEXT TIME, HOLD ONTO YOUR BOTTLE\nUNTIL YOU FIND A RECYCLING BIN THAT HAS SPACE INSIDE."
@@ -142,6 +219,17 @@ const PPGameData = {
                     {
                         name: "pp_1_3c",
                         correct: false,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: true,
+                            deadFish: false,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: false,
+                            bottle: true
+                        },
                         resultUpperText: "THAT SENT THE BOTTLE INTO THE GUTTER, DOWN THE\nSTORMDRAIN AND POLLUTED LOCAL WATERWAYS!",
                         resultLowerText: "IF WASTE IS PLACED ON THE TOP OF A BIN IT CAN BE BLOWN\nBY WIND OR WASHED AWAY BY RAIN INTO STORMDRAINS,\n" +
                                         "WHERE IT WILL FLOW OUT TO LOCAL WATERWAYS.\n\nNEXT TIME, HOLD ONTO YOUR BOTTLE\nUNTIL YOU FIND A RECYCLING BIN THAT HAS SPACE INSIDE."
@@ -154,6 +242,17 @@ const PPGameData = {
                     {
                         name: "pp_1_4a",
                         correct: false,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: false,
+                            deadFish: true,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: true,
+                            bottle: false
+                        },
                         resultUpperText: "THAT SENT TRASH INTO THE GUTTER, DOWN THE\nSTORMDRAIN AND POLLUTED LOCAL WATERWAYS!",
                         resultLowerText: "LIDS ON TRASH BINS SHOULD BE CLOSED TO KEEP RAINWATER\nOUT AND PREVENT WIND FROM BLOWING TRASH OUT OF THE\n" +
                                         "BIN AND INTO THE STORMDRAIN AND LOCAL WATERWAYS.\n\nNEXT TIME, TAKE OUT EXTRA WASTE SO THE LID WILL CLOSE.\n" +
@@ -162,6 +261,17 @@ const PPGameData = {
                     {
                         name: "pp_1_4b",
                         correct: true,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: true,
+                            deadFish: false,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: false,
+                            bottle: false
+                        },
                         resultUpperText: "YOU PREVENTED POLLUTION AND KEPT\nTHE LOCAL WATERWAYS CLEAN!",
                         resultLowerText: "LIDS ON TRASH BINS SHOULD BE CLOSED TO KEEP RAINWATER\nOUT AND PREVENT WIND FROM BLOWING TRASH OUT OF THE\n" +
                                         "BIN AND INTO THE STORMDRAIN AND LOCAL WATERWAYS."
@@ -174,6 +284,17 @@ const PPGameData = {
                     {
                         name: "pp_1_5a",
                         correct: false,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: false,
+                            deadFish: true,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: true,
+                            bottle: false
+                        },
                         resultUpperText: "THAT SENT TRASH INTO THE GUTTER, DOWN THE\nSTORMDRAIN AND POLLUTED LOCAL WATERWAYS!",
                         resultLowerText: "WHEN TRASH IS LEFT ON THE GROUND, WIND AND RAIN CAN\nCARRY IT TO STORMDRAINS AND OUT TO LOCAL WATERWAYS.\n\n" +
                                         "NEXT TIME, PICK UP TRASH WHEN YOU DROP IT."
@@ -181,6 +302,17 @@ const PPGameData = {
                     {
                         name: "pp_1_5b",
                         correct: true,
+                        wetlands: {
+                            overlay: 0,
+                            lilypad: true,
+                            aliveFish: true,
+                            deadFish: false,
+                            soap: false,
+                            mulch: false,
+                            leaves: false,
+                            trash: false,
+                            bottle: false
+                        },
                         resultUpperText: "YOU PREVENTED POLLUTION AND KEPT\nTHE LOCAL WATERWAYS CLEAN!",
                         resultLowerText: "WHEN TRASH IS LEFT ON THE GROUND, WIND AND RAIN CAN\nCARRY IT TO STORMDRAINS AND OUT TO LOCAL WATERWAYS."
                     }
