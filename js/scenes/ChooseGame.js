@@ -22,6 +22,7 @@ var ChooseGameState = {
         this.speechText1 = this.add.text(0.2 * WIDTH + 0.5, 0.66 * HEIGHT + 0.5, TextData.chooseGame, TextStyle.centered);
         this.speechText1.anchor.setTo(0.5, 0.5);
         this.speechText1.lineSpacing = TextStyle.lineSpacing;
+        this.speechText1.resolution = 2;
         
         // Buttons
         this.ffButton = this.add.button(0.25 * WIDTH, 0.22 * HEIGHT, "button_ff", this.ffButtonActions.onClick, this, 0, 0, 1);

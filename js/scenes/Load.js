@@ -4,45 +4,49 @@ var LoadState = {
     preload: function() {
 
         // Backgrounds
-        this.load.image("background_1", "assets/background_1.png");
-        this.load.image("background_2", "assets/background_2.png");  
-        this.load.image("background_3", "assets/background_3.png");  
-        this.load.image("background_4", "assets/background_4.png");  
+        this.load.image("background_1", "assets/background/1.png");
+        this.load.image("background_2", "assets/background/2.png");  
+        this.load.image("background_3", "assets/background/3.png");  
+        this.load.image("background_4", "assets/background/4.png");  
 
         // Clouds
-        this.load.image("cloud_1", "assets/cloud_1.png");
-        this.load.image("cloud_2", "assets/cloud_2.png");
+        this.load.image("cloud_1", "assets/cloud/1.png");
+        this.load.image("cloud_2", "assets/cloud/2.png");
 
         // Titles
-        this.load.image("title_prevents", "assets/title_prevents.png");
-        this.load.image("title_professor", "assets/title_professor.png");
+        this.load.image("title_prevents", "assets/title/prevents.png");
+        this.load.image("title_professor", "assets/title/professor.png");
 
         // Characters
-        this.load.image("professor_1", "assets/professor_1.png");
-        this.load.image("professor_2", "assets/professor_2.png");
-        this.load.image("professor_3", "assets/professor_3.png");
-        this.load.image("professor_4", "assets/professor_4.png");
-        this.load.image("professor_5", "assets/professor_5.png");
-        this.load.image("professor_6", "assets/professor_6.png");
-        this.load.image("professor_7", "assets/professor_7.png");
+        this.load.image("professor_1", "assets/professor/1.png");
+        this.load.image("professor_2", "assets/professor/2.png");
+        this.load.image("professor_3", "assets/professor/3.png");
+        this.load.image("professor_4", "assets/professor/4.png");
+        this.load.image("professor_5", "assets/professor/5.png");
+        this.load.image("professor_6", "assets/professor/6.png");
+        this.load.image("professor_7", "assets/professor/7.png");
 
         // Speech Boxes
-        this.load.image("speechbox_1", "assets/speechbox_1.png");
-        this.load.image("speechbox_2", "assets/speechbox_2.png");
-        this.load.image("speechbox_3", "assets/speechbox_3.png");
-        this.load.image("speechbox_4", "assets/speechbox_4.png");
-        this.load.image("speechbox_5", "assets/speechbox_5.png");
+        this.load.image("speechbox_1", "assets/speechbox/1.png");
+        this.load.image("speechbox_2", "assets/speechbox/2.png");
+        this.load.image("speechbox_3", "assets/speechbox/3.png");
+        this.load.image("speechbox_4", "assets/speechbox/4.png");
+        this.load.image("speechbox_5", "assets/speechbox/5.png");
 
         // Info Boxes
-        this.load.image("infobox_intro3", "assets/infobox_intro3.png");
-        this.load.image("infobox_intro4", "assets/infobox_intro4.png");
+        this.load.image("infobox_intro3", "assets/infobox_intro/3.png");
+        this.load.image("infobox_intro4", "assets/infobox_intro/4.png");
 
         // Buttons
-        this.load.spritesheet("button_play", "assets/button_play.png", 116, 116);
-        this.load.spritesheet("button_home", "assets/button_home.png", 116, 116);
-        this.load.spritesheet("button_next", "assets/button_next.png", 152, 58);
-        this.load.spritesheet("button_ff", "assets/button_ff.png", 212, 212);
-        this.load.spritesheet("button_pp", "assets/button_pp.png", 212, 212);
+        this.load.spritesheet("button_play", "assets/button/play.png", 116, 116);
+        this.load.spritesheet("button_home", "assets/button/home.png", 116, 116);
+        this.load.spritesheet("button_sound", "assets/button/sound.png", 116, 116);
+        this.load.spritesheet("button_next", "assets/button/next.png", 152, 58);
+        this.load.spritesheet("button_ff", "assets/button/ff.png", 212, 212);
+        this.load.spritesheet("button_pp", "assets/button/pp.png", 212, 212);
+        this.load.spritesheet("button_pp_lvl1", "assets/pp/button_level1.png", 152, 58);
+        this.load.spritesheet("button_pp_lvl2", "assets/pp/button_level2.png", 152, 58);
+        this.load.spritesheet("button_pp_lvl3", "assets/pp/button_level3.png", 152, 58);
 
         // Audio
         this.load.audio("title_music", "audio/JoyInTheWorldNew.mp3");
