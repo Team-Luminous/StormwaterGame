@@ -16,7 +16,6 @@ window.onload = function() {
     Game.state.add("PPRainState", PPRainState);
     Game.state.add("PPResultState", PPResultState);
     Game.state.add("PPScoreState", PPScoreState);
-    Game.state.add("PPLevelSelectState", PPLevelSelectState);
 
     Game.state.start("LoadState");
 };
