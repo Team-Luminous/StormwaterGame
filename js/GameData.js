@@ -800,7 +800,7 @@ const PPGameData = {
                         },
                         resultUpperText: "THAT SENT LEAVES INTO THE GUTTER, DOWN\nTHE STORMDRAIN AND POLLUTED LOCAL WATERWAYS!",
                         resultLowerText: "LEAVES REMOVE OXYGEN FROM THE WATER WHEN THEY\nDECOMPOSE, KILLING FISH AND OTHER ANIMALS THAT LIVE\n" +
-										 "IN THE WATER.\nNEXT TIME, RANK UP THE LEAVES AND PLACE THEM IN YOUR\N" +
+										 "IN THE WATER.\nNEXT TIME, RANK UP THE LEAVES AND PLACE THEM IN YOUR\n" +
 										 "ORGANICS CART OR LEAVE THEM IN YOUR YARD AS MULCH."
                     }
                 ]
