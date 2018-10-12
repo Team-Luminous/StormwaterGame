@@ -12,10 +12,12 @@ window.onload = function() {
     Game.state.add("IntroState", IntroState);
     Game.state.add("ChooseGameState", ChooseGameState);
 
+    Game.state.add("PPIntroState", PPIntroState);
     Game.state.add("PPQuestionState", PPQuestionState);
     Game.state.add("PPRainState", PPRainState);
     Game.state.add("PPResultState", PPResultState);
     Game.state.add("PPScoreState", PPScoreState);
+    Game.state.add("PPLevelSelectState", PPLevelSelectState);
 
     Game.state.start("LoadState");
 };

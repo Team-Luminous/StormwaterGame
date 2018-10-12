@@ -49,7 +49,7 @@ var ChooseGameState = {
     },
     ppButtonActions: {
         onClick: function() {
-            this.state.start("PPLevelSelectState");
+            this.state.start("PPIntroState");
         }
     }
 };

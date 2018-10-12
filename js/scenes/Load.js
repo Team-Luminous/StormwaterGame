@@ -54,6 +54,10 @@ var LoadState = {
         // Protect or Pollute
         this.load.image("pp_question_text", "assets/pp/pp_question_text.png");
         this.load.image("pp_score_title", "assets/pp/pp_score_title.png");
+        this.load.image("pp_trashcan", "assets/pp/pp_trashcan.png");
+        this.load.image("pp_dirt", "assets/pp/pp_dirt.png");
+        this.load.image("pp_dog", "assets/pp/pp_dog.png");
+        this.load.image("pp_wetlands", "assets/pp/pp_wetlands.png");
 
         // Wetlands
         this.load.image("pp_wetlands_background", "assets/pp/result/pp_wetlands_background.png");

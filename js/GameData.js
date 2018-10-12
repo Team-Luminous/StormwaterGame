@@ -19,7 +19,7 @@ function shuffleArray(array) {
 var PPGame = {
     reset: function() {
         this.score = 0;
-        this.levelId = 2;
+        this.levelId = 0;
 
         this.questionsCompleted = 0;
         this.questionOrder = shuffleArray([0, 1, 2, 3, 4]);
@@ -65,6 +65,11 @@ const TextData = {
         "LET'S SEE HOW THE SIMPLE\nCHOICES YOU MAKE AFFECT\nTHE WATER QUALITY IN\nLOCAL WETLANDS\nAND WATERWAYS."
     ],
     chooseGame: "PLAY BOTH GAMES\nTO LEARN MORE ABOUT\nPREVENTING\nSTORMWATER POLLUTION!",
+    ppIntro: [
+        "IN THIS GAME, YOU\nWILL CHOOSE HOW\nTO DEAL WITH\nDIFFERENT PROBLEMS.",
+        "AFTER YOU MAKE A CHOICE,\nYOU CAN SEE HOW IT\nAFFECTED THE WATER\nIN LOCAL WETLANDS\nAND WATERWAYS.",
+        "TRY TO CHOOSE\nOPTIONS THAT PREVENT\nPOLLUTION AND PROTECT\nOUR WETLANDS\nAND WATERWAYS."
+    ],
     ppChoseLevel: "CHOOSE A LEVEL\nTO START THE GAME!"
 };
 
