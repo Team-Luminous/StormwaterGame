@@ -60,7 +60,7 @@ var PPResultState = {
 
         // Fish
         if(wetlands.aliveFish) {
-            this.wetlandsFishSprite = this.add.sprite(wetlandsX + 0.275 * WIDTH, wetlandsY + 0.1 * HEIGHT, "pp_wetlands_fish");
+            this.wetlandsFishSprite = this.add.sprite(wetlandsX + 0.275 * 0.5 * WIDTH, wetlandsY + 0.1 * HEIGHT, "pp_wetlands_fish");
             this.wetlandsFishSprite.anchor.setTo(0.5, 0.5);
     
             this.wetlandsFishMask = this.add.graphics(0, 0);
@@ -70,14 +70,21 @@ var PPResultState = {
     
             this.add.tween(this.wetlandsFishSprite).to({ angle: -5 }, 4000, "Sine", true, 0, -1, true);
             this.add.tween(this.wetlandsFishSprite).to({ y: wetlandsY + 0.11 * HEIGHT }, 4000, "Sine", true, 0, -1, true);
-            this.add.tween(this.wetlandsFishSprite).to({ x: wetlandsX - 0.275 * WIDTH }, 30000, Phaser.Easing.In, true, 0, -1, true);
+
+            var lapTime = 25000;
+            this.add.tween(this.wetlandsFishSprite).to({ x: wetlandsX - 0.275 * WIDTH }, lapTime * 0.75, Phaser.Easing.In, true, 0, -1, false);
             var fishFlipDirection = function(self) {
-                self.time.events.add(30000, function() { 
+                self.time.events.add(lapTime, function() { 
                     self.wetlandsFishSprite.scale.x *= -1.0; 
                     fishFlipDirection(self); 
                 }, self);
             };
-            fishFlipDirection(this);
+            this.time.events.add(lapTime * 0.75, function() {
+                this.wetlandsFishSprite.position.x = wetlandsX - 0.275 * WIDTH;
+                this.wetlandsFishSprite.scale.x *= -1.0; 
+                this.add.tween(this.wetlandsFishSprite).to({ x: wetlandsX + 0.275 * WIDTH }, lapTime, Phaser.Easing.In, true, 0, -1, true);
+                fishFlipDirection(this);
+            }, this);
         }
         
         // Dead Fish
