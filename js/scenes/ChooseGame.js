@@ -48,7 +48,7 @@ var ChooseGameState = {
     },
     ppButtonActions: {
         onClick: function() {
-            this.state.start("PPQuestionState");
+            this.state.start("PPIntroState");
         }
     }
 };
