@@ -5,6 +5,7 @@ var LoadState = {
 
         // Backgrounds
         this.load.image("background_1", "assets/background/1.png");
+        this.load.image("background_1_1", "assets/background/1_1.png");  
         this.load.image("background_2", "assets/background/2.png");  
         this.load.image("background_3", "assets/background/3.png");  
         this.load.image("background_4", "assets/background/4.png");  
@@ -12,6 +13,8 @@ var LoadState = {
         // Clouds
         this.load.image("cloud_1", "assets/cloud/1.png");
         this.load.image("cloud_2", "assets/cloud/2.png");
+        this.load.image("cloud_3", "assets/cloud/3.png");
+        this.load.image("cloud_4", "assets/cloud/4.png");
 
         // Titles
         this.load.image("title_prevents", "assets/title/prevents.png");
@@ -40,6 +43,7 @@ var LoadState = {
         // Buttons
         this.load.spritesheet("button_play", "assets/button/play.png", 116, 116);
         this.load.spritesheet("button_home", "assets/button/home.png", 116, 116);
+        this.load.spritesheet("button_replay", "assets/button/replay.png", 116, 116);
         this.load.spritesheet("button_sound", "assets/button/sound.png", 116, 116);
         this.load.spritesheet("button_next", "assets/button/next.png", 152, 58);
         this.load.spritesheet("button_ff", "assets/button/ff.png", 212, 212);
@@ -58,6 +62,8 @@ var LoadState = {
         this.load.image("pp_dirt", "assets/pp/pp_dirt.png");
         this.load.image("pp_dog", "assets/pp/pp_dog.png");
         this.load.image("pp_wetlands", "assets/pp/pp_wetlands.png");
+        this.load.image("pp_house", "assets/pp/pp_house.png");
+        this.load.image("pp_raindrop", "assets/pp/pp_raindrop.png");
 
         // Wetlands
         this.load.image("pp_wetlands_background", "assets/pp/result/pp_wetlands_background.png");
@@ -97,6 +103,6 @@ var LoadState = {
         this.titleMusic = this.add.audio("title_music", 0.2);
         this.titleMusic.loopFull();
 
-        this.state.start("TitleState");
+        this.state.start("TitleState");      
     }
 };

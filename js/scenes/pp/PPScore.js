@@ -35,8 +35,11 @@ var PPScoreState = {
         // Buttons
         this.homeButton = this.add.button(0.2 * WIDTH, 0.78 * HEIGHT, "button_home", this.homeButtonActions.onClick, this, 0, 0, 1);
         this.homeButton.anchor.setTo(0.5, 0.5);
-
         this.add.tween(this.homeButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
+
+        this.replayButton = this.add.button(0.4 * WIDTH, 0.78 * HEIGHT, "button_replay", this.replayButtonActions.onClick, this, 0, 0, 1);
+        this.replayButton.anchor.setTo(0.5, 0.5);
+        this.add.tween(this.replayButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
         // Start Animation
         this.animationSpeed = 500;
@@ -53,6 +56,11 @@ var PPScoreState = {
     homeButtonActions: {
         onClick: function() {
             this.state.start("TitleState");
+        }
+    },    
+    replayButtonActions: {
+        onClick: function() {
+            this.state.start("PPLevelSelectState");
         }
     }
 };

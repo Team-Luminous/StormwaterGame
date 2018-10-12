@@ -41,6 +41,12 @@ var PPLevelSelectState = {
         this.level3Btn = this.add.button(0.835 * WIDTH, 0.55 * HEIGHT, "button_pp_lvl3", this.buttonActions.onClickThree, this, 0, 0, 1);
         this.level3Btn.anchor.setTo(0.5, 0.5);
         this.add.tween(this.level3Btn.scale).to({ x: 0.9, y: 0.9 }, 600, "Linear", true).yoyo(true, 0).loop(true);
+
+        // Start Animation
+        this.animationSpeed = 500;
+
+        this.add.tween(this.speechText.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+        this.add.tween(this.speechBox.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
     },
     update: function() {
         updateCloudSprites(this);
@@ -59,4 +65,5 @@ var PPLevelSelectState = {
             this.state.start("PPQuestionState");
         }
     },
+    
 }
