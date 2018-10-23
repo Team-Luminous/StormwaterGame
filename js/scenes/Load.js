@@ -96,13 +96,83 @@ var LoadState = {
             }
         }
 
+        // Find It & Fix It
+        this.load.image("ff_background", "assets/ff/ff_background.png");
+        this.load.image("ff_bush", "assets/ff/ff_bush.png");
+
+        this.load.image("ff_question_box", "assets/ff/ff_question_box.png");
+        this.load.image("ff_oops_box", "assets/ff/ff_oops_box.png");
+        this.load.image("ff_correct_box", "assets/ff/ff_correct_box.png");
+
+        this.load.spritesheet("ff_button_fix_it", "assets/ff/ff_button_fix_it.png", 187, 52);
+        this.load.spritesheet("ff_button_its_ok", "assets/ff/ff_button_its_ok.png", 187, 52);
+        this.load.spritesheet("ff_button_next", "assets/ff/ff_button_next.png", 200, 82);
+
+        this.load.image("ff_image_car", "assets/ff/ff_image_car.png");
+        this.load.image("ff_image_car_oil", "assets/ff/ff_image_car_oil.png");
+        this.load.image("ff_image_dirt_sidewalk", "assets/ff/ff_image_dirt_sidewalk.png");
+        this.load.image("ff_image_dirt_sweep", "assets/ff/ff_image_dirt_sweep.png");
+        this.load.image("ff_image_dog_poop", "assets/ff/ff_image_dog_poop.png");
+        this.load.image("ff_image_pickup_poop", "assets/ff/ff_image_pickup_poop.png");
+        this.load.image("ff_image_downspout_yard", "assets/ff/ff_image_downspout_yard.png");
+        this.load.image("ff_image_downspout_concrete", "assets/ff/ff_image_downspout_concrete.png");
+        this.load.image("ff_image_sprinkler_fixed", "assets/ff/ff_image_sprinkler_fixed.png");
+        this.load.image("ff_image_sprinkler_sidewalk", "assets/ff/ff_image_sprinkler_sidewalk.png");
+        this.load.image("ff_image_trash", "assets/ff/ff_image_trash.png");
+        this.load.image("ff_image_trash_pickup", "assets/ff/ff_image_trash_pickup.png");        
+        this.load.image("ff_image_trashbin_open", "assets/ff/ff_image_trashbin_open.png");
+        this.load.image("ff_image_trashbin_closed", "assets/ff/ff_image_trashbin_closed.png");
+        this.load.image("ff_image_washing_car_carwash", "assets/ff/ff_image_washing_car_carwash.png");
+        this.load.image("ff_image_washing_car_driveway", "assets/ff/ff_image_washing_car_driveway.png");
+        this.load.image("ff_image_washing_dog_driveway", "assets/ff/ff_image_washing_dog_driveway.png");
+        this.load.image("ff_image_washing_dog_grass", "assets/ff/ff_image_washing_dog_grass.png");
+
+        this.load.image("ff_car", "assets/ff/ff_car.png");
+        this.load.image("ff_car_outline", "assets/ff/ff_car_outline.png");
+        this.load.image("ff_car_oil", "assets/ff/ff_car_oil.png");
+        this.load.image("ff_car_oil_outline", "assets/ff/ff_car_oil_outline.png");
+
+        this.load.image("ff_dirt", "assets/ff/ff_dirt.png");
+        this.load.image("ff_dirt_outline", "assets/ff/ff_dirt_outline.png");
+
+        this.load.image("ff_dog_poop", "assets/ff/ff_dog_poop.png");
+        this.load.image("ff_dog_poop_outline", "assets/ff/ff_dog_poop_outline.png");
+        this.load.image("ff_pickup_poop", "assets/ff/ff_pickup_poop.png");
+        this.load.image("ff_pickup_poop_outline", "assets/ff/ff_pickup_poop_outline.png");
+
+        this.load.image("ff_downspout", "assets/ff/ff_downspout.png");
+        this.load.image("ff_downspout_outline", "assets/ff/ff_downspout_outline.png");
+        this.load.image("ff_downspout_water", "assets/ff/ff_downspout_water.png");
+
+        this.load.image("ff_sprinkler", "assets/ff/ff_sprinkler.png");
+        this.load.image("ff_sprinkler_outline", "assets/ff/ff_sprinkler_outline.png");
+        this.load.image("ff_sprinkler_fixed", "assets/ff/ff_sprinkler_fixed.png");
+        this.load.image("ff_sprinkler_fixed_outline", "assets/ff/ff_sprinkler_fixed_outline.png");
+        this.load.image("ff_sprinkler_water", "assets/ff/ff_sprinkler_water.png");
+
+        this.load.image("ff_trash", "assets/ff/ff_trash.png");
+        this.load.image("ff_trash_outline", "assets/ff/ff_trash_outline.png");
+
+        this.load.image("ff_trashbin_closed", "assets/ff/ff_trashbin_closed.png");
+        this.load.image("ff_trashbin_closed_outline", "assets/ff/ff_trashbin_closed_outline.png");
+        this.load.image("ff_trashbin_open", "assets/ff/ff_trashbin_open.png");
+        this.load.image("ff_trashbin_open_outline", "assets/ff/ff_trashbin_open_outline.png");
+
+        this.load.image("ff_washing_car", "assets/ff/ff_washing_car.png");
+        this.load.image("ff_washing_car_outline", "assets/ff/ff_washing_car_outline.png");
+        this.load.image("ff_washing_car_water", "assets/ff/ff_washing_car_water.png");
+
+        this.load.image("ff_washing_dog", "assets/ff/ff_washing_dog.png");
+        this.load.image("ff_washing_dog_outline", "assets/ff/ff_washing_dog_outline.png");
+        this.load.image("ff_washing_dog_water", "assets/ff/ff_washing_dog_water.png");
     },
     create: function() {
         
         // Audio
         this.titleMusic = this.add.audio("title_music", 0.2);
-        this.titleMusic.loopFull();
+        // this.titleMusic.loopFull();
 
-        this.state.start("TitleState");      
+        // this.state.start("TitleState");    
+        this.state.start("FFGameState");  
     }
 };

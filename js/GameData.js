@@ -30,6 +30,24 @@ var PPGame = {
 };
 PPGame.reset();
 
+var FFGame = {
+    reset: function() {
+        this.score = 0;
+
+        this.options = [
+            {
+                id: 0,
+                wrong: true
+            },
+            {
+                id: 1,
+                wrong: true
+            }
+        ]
+    }
+};
+FFGame.reset();
+
 const TextStyle = {
     centered: {
         font: '12pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
@@ -41,6 +59,10 @@ const TextStyle = {
     },
     centeredExtraLarge: {
         font: '16pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
+        align: 'center'
+    },
+    centeredXXLarge: {
+        font: '24pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
         align: 'center'
     },
     centeredHeader: {
@@ -813,5 +835,88 @@ const PPGameData = {
 				
             }
         ]
+    ]
+};
+
+const FFGameData = {
+    resultsHeader: [
+        "YOU FIXED IT!",
+        "CORRECT!",
+        "OOPS!"
+    ],
+    finalScore: function(x) {
+        return ""
+    },
+    options: [
+        { // Option 0 - Downspout
+            wrongOnly: false,
+            correct: {
+                sprite: {
+                    name: "ff_downspout",
+                    position: { x: 0.865, y: 0.285 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: [
+                        {
+                            name: "ff_downspout_water",
+                            position: { x: 0.895, y: 0.428 },
+                            scale: { x: 1.0, y: 1.0 }
+                        }
+                    ]
+                },
+                questionTitle: "DOWNSPOUT LEADS TO\nTHE YARD",
+                questionImage: "ff_image_downspout_yard",
+                resultImage: "ff_image_downspout_yard",
+                resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
+                resultLowerText: "DOWNSPOUTS THAT DRAIN TO\nCONCRETE CAN CARRY\nPOLLUTANTS TO STORMWATER\nAND LOCAL WATERWAYS."
+            },
+            wrong: {
+                sprite: {
+                    name: "ff_downspout",
+                    position: { x: 0.855, y: 0.285 },
+                    scale: { x: -1.0, y: 1.0 },
+                    extras: [
+                        {
+                            name: "ff_downspout_water",
+                            position: { x: 0.825, y: 0.428 },
+                            scale: { x: -1.0, y: 1.0 }
+                        }
+                    ]
+                },
+                questionTitle: "DOWNSPOUT LEADS TO\nTHE CONCRETE",
+                questionImage: "ff_image_downspout_concrete",
+                resultImage: "ff_image_downspout_concrete",
+                resultUpperText: "THAT SENT OIL, DIRT, LITTER AND OTHER\nPOLLUTANTS INTO THE GUTTERS, DOWN THE\nSTORMDRAIN AND POLLUTED LOCAL WATERWAYS!",
+                resultLowerText: "DOWNSPOUTS THAT DRAIN TO\nCONCRETE CAN CARRY POLLUTANTS\nTO STORMDRAINS AND LOCAL\nWATERWAYS. NEXT TIME, DIRECT\nDOWNSPOUTS TO DRAIN TO PLANTS\nIN YOUR YARD AND ALLOW THE\nWATER TO SOAK INTO THE GROUND."
+            }
+        },
+        { // Option 1 - Trash Bin
+            wrongOnly: false,
+            correct: {
+                sprite: {
+                    name: "ff_trashbin_closed",
+                    position: { x: 0.5, y: 0.84 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: []
+                },
+                questionTitle: "THE LID IS ON\nTHE TRASH BIN",
+                questionImage: "ff_image_trashbin_closed",
+                resultImage: "ff_image_trashbin_closed",
+                resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
+                resultLowerText: "LIDS ON TRASH BINS SHOULD BE\nCLOSED TO KEEP RAINWATER OUT\nAND PREVENT WIND FROM\nBLOWING TRASH OUT OF THE BIN\nAND INTO THE STORMDRAIN\nAND LOCAL WATERWAYS."
+            },
+            wrong: {
+                sprite: {
+                    name: "ff_trashbin_open",
+                    position: { x: 0.5, y: 0.84 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: []
+                },
+                questionTitle: "THE LID IS OFF\nTHE TRASH BIN",
+                questionImage: "ff_image_trashbin_open",
+                resultImage: "ff_image_trashbin_open",
+                resultUpperText: "THAT SENT LITTER INTO THE\nGUTTERS, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
+                resultLowerText: "LIDS ON TRASH BINS SHOULD BE\nCLOSED TO KEEP RAINWATER OUT\nAND PREVENT WIND FROM\nBLOWING TRASH OUT OF THE BIN\nAND INTO THE STORMDRAIN\nAND LOCAL WATERWAYS."
+            }
+        }
     ]
 };
