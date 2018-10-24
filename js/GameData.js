@@ -37,7 +37,7 @@ var FFGame = {
         this.options = [
             {
                 id: 0,
-                wrong: true
+                wrong: false
             },
             {
                 id: 1,
