@@ -173,6 +173,6 @@ var LoadState = {
         this.titleMusic.loopFull();
 
         this.state.start("TitleState");    
-        // this.state.start("FFGameState");  
+        //this.state.start("FFGameState");  
     }
 };
