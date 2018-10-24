@@ -54,62 +54,74 @@ var FFGameState = {
         }
 
         // Question Box
-        this.questionBoxSprite = this.add.sprite(0.5 * WIDTH, 0.5 * HEIGHT, "ff_question_box");
-        this.questionBoxSprite.anchor.setTo(0.5, 0.5);
+        this.questionBoxGroup = this.add.group();
+        this.questionBoxGroup.position.setTo(0.5 * WIDTH, 0.5 * HEIGHT);
+        this.questionBoxGroup.visible = false;
 
-        this.fixItButton = this.add.button(0.67 * WIDTH, 0.47 * HEIGHT, "ff_button_fix_it", function(){ this.startResult(true); }, this, 0, 0, 1);
+        this.questionBoxSprite = this.add.sprite(0.0 * WIDTH, 0.0 * HEIGHT, "ff_question_box");
+        this.questionBoxSprite.anchor.setTo(0.5, 0.5);
+        this.questionBoxGroup.add(this.questionBoxSprite);
+
+        this.fixItButton = this.add.button(0.17 * WIDTH, -0.03 * HEIGHT, "ff_button_fix_it", function(){ this.startResult(true); }, this, 0, 0, 1);
         this.fixItButton.anchor.setTo(0.5, 0.5);
+        this.questionBoxGroup.add(this.fixItButton);
         this.add.tween(this.fixItButton.scale).to({ x: 0.9, y: 0.9 }, 600, "Linear", true, 0, -1, true);
 
-        this.itsOkButton = this.add.button(0.67 * WIDTH, 0.62 * HEIGHT, "ff_button_its_ok", function(){ this.startResult(false); }, this, 0, 0, 1);
+        this.itsOkButton = this.add.button(0.17 * WIDTH, 0.12 * HEIGHT, "ff_button_its_ok", function(){ this.startResult(false); }, this, 0, 0, 1);
         this.itsOkButton.anchor.setTo(0.5, 0.5);
+        this.questionBoxGroup.add(this.itsOkButton);
         this.add.tween(this.itsOkButton.scale).to({ x: 0.9, y: 0.9 }, 600, "Linear", true, 0, -1, true);
 
-        this.questionImageSprite = this.add.sprite(0.39 * WIDTH, 0.55 * HEIGHT, "");
+        this.questionImageSprite = this.add.sprite(-0.11 * WIDTH, 0.05 * HEIGHT, "");
         this.questionImageSprite.anchor.setTo(0.5, 0.5);
+        this.questionBoxGroup.add(this.questionImageSprite);
 
-        this.questionHeaderText = this.add.text(0.5 * WIDTH, 0.33 * HEIGHT, "LINE 1\nLINE 2", TextStyle.centeredXXLarge);
+        this.questionHeaderText = this.add.text(0.0 * WIDTH, -0.17 * HEIGHT, "LINE 1\nLINE 2", TextStyle.centeredXXLarge);
         this.questionHeaderText.anchor.setTo(0.5, 0.5);
         this.questionHeaderText.addFontWeight('bold', 0);
         this.questionHeaderText.lineSpacing = -8;
         this.questionHeaderText.resolution = 2;
+        this.questionBoxGroup.add(this.questionHeaderText);
 
         // Results Box
-        this.resultsBoxSprite = this.add.sprite(0.5 * WIDTH, 0.5 * HEIGHT, "");
-        this.resultsBoxSprite.anchor.setTo(0.5, 0.5);
+        this.resultsBoxGroup = this.add.group();
+        this.resultsBoxGroup.position.setTo(0.5 * WIDTH, 0.5 * HEIGHT);
+        this.resultsBoxGroup.visible = false;
 
-        this.resultsHeaderText = this.add.text(0.5 * WIDTH, 0.07 * HEIGHT, "", TextStyle.centeredXXLarge);
+        this.resultsBoxSprite = this.add.sprite(0.0 * WIDTH, 0.0 * HEIGHT, "");
+        this.resultsBoxSprite.anchor.setTo(0.5, 0.5);
+        this.resultsBoxGroup.add(this.resultsBoxSprite);
+
+        this.resultsHeaderText = this.add.text(0.0 * WIDTH, -0.43 * HEIGHT, "", TextStyle.centeredXXLarge);
         this.resultsHeaderText.anchor.setTo(0.5, 0.5);
         this.resultsHeaderText.addColor('#fff', 0);
         this.resultsHeaderText.addFontWeight('bold', 0);
         this.resultsHeaderText.resolution = 2;
+        this.resultsBoxGroup.add(this.resultsHeaderText);
 
-        this.resultsUpperText = this.add.text(0.5 * WIDTH, 0.16 * HEIGHT, "", TextStyle.centered);
+        this.resultsUpperText = this.add.text(0.0 * WIDTH, -0.34 * HEIGHT, "", TextStyle.centered);
         this.resultsUpperText.anchor.setTo(0.5, 0.5);
         this.resultsUpperText.addColor('#fff', 0);
         this.resultsUpperText.addFontWeight('bold', 0);
         this.resultsUpperText.lineSpacing = -8;
         this.resultsUpperText.resolution = 2;
+        this.resultsBoxGroup.add(this.resultsUpperText);
 
-        this.resultsLowerText = this.add.text(0.5 * WIDTH, 0.675 * HEIGHT, "", TextStyle.centeredLarge);
+        this.resultsLowerText = this.add.text(0.0 * WIDTH, 0.175 * HEIGHT, "", TextStyle.centeredLarge);
         this.resultsLowerText.anchor.setTo(0.5, 0.5);
         this.resultsLowerText.addFontWeight('bold', 0);
         this.resultsLowerText.lineSpacing = -8;
         this.resultsLowerText.resolution = 2;
+        this.resultsBoxGroup.add(this.resultsLowerText);
 
-        this.resultsImageSprite = this.add.sprite(0.5 * WIDTH, 0.355 * HEIGHT, "");
+        this.resultsImageSprite = this.add.sprite(0.0 * WIDTH, -0.145 * HEIGHT, "");
         this.resultsImageSprite.anchor.setTo(0.5, 0.5);
+        this.resultsBoxGroup.add(this.resultsImageSprite);
 
-        this.resultsNextButton = this.add.button(0.5 * WIDTH, 0.89 * HEIGHT, "ff_button_next", function(){ this.closeResult(); }, this, 0, 0, 1);
+        this.resultsNextButton = this.add.button(0.0 * WIDTH, 0.39 * HEIGHT, "ff_button_next", function(){ this.closeResult(); }, this, 0, 0, 1);
         this.resultsNextButton.anchor.setTo(0.5, 0.5);
+        this.resultsBoxGroup.add(this.resultsNextButton);
         this.add.tween(this.resultsNextButton.scale).to({ x: 0.9, y: 0.9 }, 600, "Linear", true, 0, -1, true);
-
-        this.nextDelay = 1000;
-        this.animationSpeed = 500;
-        this.delaySpeed = 250;
-
-        this.setQuestionBoxVisible(false);
-        this.setResultsBoxVisible(false, false);
     },
     update: function() {
     },
@@ -121,44 +133,10 @@ var FFGameState = {
             }
         }
     },
-    setQuestionBoxVisible: function(visible) {
-        this.questionBoxSprite.visible = visible;
-        this.fixItButton.visible = visible;
-        this.itsOkButton.visible = visible;
-        this.questionImageSprite.visible = visible;
-        this.questionHeaderText.visible = visible;
-
-        if(visible) {
-            this.add.tween(this.questionBoxSprite.scale).from({ x: 0.5, y: 0.5 }, this.animationSpeed, "Elastic", true);
-            this.add.tween(this.fixItButton.scale).from({ x: 0.5, y: 0.5 }, this.animationSpeed, "Elastic", true);
-            this.add.tween(this.itsOkButton.scale).from({ x: 0.5, y: 0.5 }, this.animationSpeed, "Elastic", true);
-            this.add.tween(this.questionImageSprite.scale).from({ x: 0.5, y: 0.5 }, this.animationSpeed, "Elastic", true);
-            this.add.tween(this.questionHeaderText.scale).from({ x: 0.5, y: 0.5 }, this.animationSpeed, "Elastic", true);
-        }
-    },
-    setResultsBoxVisible: function(visible, correct) {
-        this.resultsBoxSprite.visible = visible;       
-        this.resultsHeaderText.visible = visible;
-        this.resultsUpperText.visible = visible;
-        this.resultsLowerText.visible = visible;
-        this.resultsImageSprite.visible = visible;
-
-        if(visible) {
-            this.resultsBoxSprite.loadTexture((correct ? "ff_correct_box" : "ff_oops_box"));
-            this.add.tween(this.resultsBoxSprite.scale).from({ x: 0.5, y: 0.5 }, this.animationSpeed, "Elastic", true);
-            this.add.tween(this.resultsHeaderText.scale).from({ x: 0.5, y: 0.5 }, this.animationSpeed, "Elastic", true);
-            this.add.tween(this.resultsUpperText.scale).from({ x: 0.5, y: 0.5 }, this.animationSpeed, "Elastic", true);
-            this.add.tween(this.resultsLowerText.scale).from({ x: 0.5, y: 0.5 }, this.animationSpeed, "Elastic", true);
-            this.add.tween(this.resultsImageSprite.scale).from({ x: 0.5, y: 0.5 }, this.animationSpeed, "Elastic", true);            
-            this.time.events.add(this.nextDelay, function() { this.resultsNextButton.visible = true; }, this);
-        }
-        else {
-            this.resultsNextButton.visible = false;
-        }
-    },
     startQuestion: function() {
-        this.setQuestionBoxVisible(true);
         this.setOptionsClickable(false);
+        this.questionBoxGroup.visible = true;
+        this.add.tween(this.questionBoxGroup.scale).from({ x: 0.5, y: 0.5 }, 500, "Elastic", true);
 
         var option = FFGame.options[this.currentQuestionId];
         var data = FFGameData.options[option.id];
@@ -168,7 +146,7 @@ var FFGameState = {
         this.questionImageSprite.loadTexture(childData.questionImage);
     },
     startResult: function(fixIt) {
-        this.setQuestionBoxVisible(false);
+        this.questionBoxGroup.visible = false;
         
         var option = FFGame.options[this.currentQuestionId];
         var data = FFGameData.options[option.id];
@@ -176,7 +154,12 @@ var FFGameState = {
         var correct = (fixIt == option.wrong);
         var dataChild = (correct ? data.correct : data.wrong);
 
-        this.setResultsBoxVisible(true, correct);
+        this.resultsBoxSprite.loadTexture((correct ? "ff_correct_box" : "ff_oops_box"));
+        this.resultsBoxGroup.visible = true;
+        this.resultsNextButton.visible = false;
+        this.add.tween(this.resultsBoxGroup.scale).from({ x: 0.5, y: 0.5 }, 500, "Elastic", true);            
+        this.time.events.add(1000, function() { this.resultsNextButton.visible = true; }, this);
+
         this.resultsHeaderText.setText(FFGameData.resultsHeader[(!correct ? 2 : (!fixIt ? 1 : 0))]);
         this.resultsUpperText.setText(dataChild.resultUpperText);
         this.resultsLowerText.setText(dataChild.resultLowerText);
@@ -205,7 +188,7 @@ var FFGameState = {
         }
     },
     closeResult: function() {
-        this.setResultsBoxVisible(false, false);
+        this.resultsBoxGroup.visible = false;
         this.setOptionsClickable(true);
     }
 };
