@@ -43,6 +43,5 @@ var PPQuestionState = {
         }
     },
     update: function() {
-    },
-
+    }
 };
