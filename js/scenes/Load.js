@@ -99,6 +99,8 @@ var LoadState = {
         // Find It & Fix It
         this.load.image("ff_background", "assets/ff/ff_background.png");
         this.load.image("ff_bush", "assets/ff/ff_bush.png");
+		this.load.image("ff_house_1", "assets/ff/ff_house_1.png");
+		this.load.image("ff_house_2", "assets/ff/ff_house_2.png");
 
         this.load.image("ff_question_box", "assets/ff/ff_question_box.png");
         this.load.image("ff_oops_box", "assets/ff/ff_oops_box.png");
