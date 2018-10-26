@@ -19,6 +19,7 @@ window.onload = function() {
     Game.state.add("PPScoreState", PPScoreState);
     Game.state.add("PPLevelSelectState", PPLevelSelectState);
 
+    Game.state.add("FFIntroState", FFIntroState);
     Game.state.add("FFGameState", FFGameState);
 
     Game.state.start("LoadState");
