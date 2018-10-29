@@ -34,6 +34,38 @@ var FFGame = {
     reset: function() {
         this.score = 0;
 
+        // This will produce:
+        //  1 Correct answer
+        //  1 Correct/Wrong answer (50% chance)
+        //  4 Wrong answers
+
+        // var wrongOnly = [];
+        // var both = [];
+        // for(var i=0; i<FFGameData.options.length; ++i) {
+        //     if(FFGameData.options[i].wrongOnly) wrongOnly.push(i);
+        //     else both.push(i);
+        // }
+        // shuffleArray(wrongOnly);
+        // shuffleArray(both);
+
+        // this.options = [
+        //     {
+        //         id: both[0],
+        //         wrong: false
+        //     },
+        //     {
+        //         id: both[1],
+        //         wrong: (Math.random() >= 0.5 ? true : false)
+        //     }
+        // ];
+
+        // for(var i=0; i<4; ++i) {
+        //     this.options.push({
+        //         id: wrongOnly[i],
+        //         wrong: true
+        //     });
+        // }
+
         this.options = [
             {
                 id: 0,
@@ -48,31 +80,31 @@ var FFGame = {
 };
 FFGame.reset();
 
-const TextStyle = {
+var TextStyle = {
     centered: {
-        font: '12pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
+        font: '12pt "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif',
         align: 'center'
     },
     centeredLarge: {
-        font: '14pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
+        font: '14pt "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif',
         align: 'center'
     },
     centeredExtraLarge: {
-        font: '16pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
+        font: '16pt "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif',
         align: 'center'
     },
     centeredXXLarge: {
-        font: '24pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
+        font: '24pt "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif',
         align: 'center'
     },
     centeredHeader: {
-        font: '28pt "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif',
+        font: '28pt "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif',
         align: 'center'
     },
     lineSpacing: -8
 };
 
-const TextData = {
+var TextData = {
     intro: [
         "HI FRIENDS! I'M\nPROFESSOR DAVIS GREEN.\nWILL YOU HELP ME PREVENT\nSTORMWATER POLLUTION?",
         "STORMWATER\nIS WATER THAT FLOWS\nACROSS THE GROUND\nWHEN IT RAINS.",
@@ -96,7 +128,7 @@ const TextData = {
     ppRain: "OK, LET'S SEE WHAT\nHAPPENS WHEN IT\nRAINS!"
 };
 
-const PPGameData = {
+var PPGameData = {
     resultsHeader: [
         "CORRECT!",
         "OOPS!"
@@ -838,7 +870,7 @@ const PPGameData = {
     ]
 };
 
-const FFGameData = {
+var FFGameData = {
     resultsHeader: [
         "YOU FIXED IT!",
         "CORRECT!",
