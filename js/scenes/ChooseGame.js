@@ -44,7 +44,7 @@ var ChooseGameState = {
     },
     ffButtonActions: {
         onClick: function() {
-            this.state.start("FFGameState");
+            this.state.start("FFIntroState");
         }
     },
     ppButtonActions: {
