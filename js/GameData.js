@@ -42,6 +42,22 @@ var FFGame = {
             {
                 id: 1,
                 wrong: true
+            },
+            {
+                id: 2,
+                wrong: true
+            },
+            {
+                id: 3,
+                wrong: true
+            },
+            {
+                id: 4,
+                wrong: true
+            },
+            {
+                id: 5,
+                wrong: true
             }
         ]
     }
@@ -620,7 +636,7 @@ const PPGameData = {
                         name: "pp_3_1a",
                         correct: false,
                         wetlands: {
-                            overlay: 4,
+                            overlay: 0,
                             lilypad: true,
                             aliveFish: false,
                             deadFish: true,
@@ -679,7 +695,7 @@ const PPGameData = {
                         name: "pp_3_2b",
                         correct: false,
                         wetlands: {
-                            overlay: 4,
+                            overlay: 1,
                             lilypad: true,
                             aliveFish: false,
                             deadFish: true,
@@ -822,7 +838,7 @@ const PPGameData = {
                         name: "pp_3_5c",
                         correct: false,
                         wetlands: {
-                            overlay: 1,
+                            overlay: 0,
                             lilypad: true,
                             aliveFish: false,
                             deadFish: true,
@@ -922,6 +938,180 @@ const FFGameData = {
                 resultImage: "ff_image_trashbin_open",
                 resultUpperText: "THAT SENT LITTER INTO THE\nGUTTERS, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
                 resultLowerText: "LIDS ON TRASH BINS SHOULD BE\nCLOSED TO KEEP RAINWATER OUT\nAND PREVENT WIND FROM\nBLOWING TRASH OUT OF THE BIN\nAND INTO THE STORMDRAIN\nAND LOCAL WATERWAYS."
+            }
+        },
+        { // Option 2 - Poop
+            wrongOnly: true,
+            correct: {
+                sprite: {
+                    name: "ff_pickup_poop",
+                    position: { x: 0.435, y: 0.45 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: []
+
+                },
+                questionTitle: "PET WASTE ON THE LAWN",
+                questionImage: "ff_pickup_poop",
+                resultImage: "ff_image_pickup_poop",
+                resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
+                resultLowerText: "PET WASTE CONTAINS HARMFUL BACTERIA\nTHAT CAN POLLUTE STORMWATER AND LOCAL\nWATERWAYS. ALWAYS PICK UP PET\nWASTE AND PLACE IT IN THE TRASH"
+            },
+            wrong: {
+                sprite: {
+                    name: "ff_dog_poop",
+                    position: { x: 0.435, y: 0.45 },
+                    scale: { x: 0.75, y: 0.75 },
+                    extras: []
+                },
+                questionTitle: "PET WASTE ON THE LAWN",
+                questionImage: "ff_image_dog_poop",
+                resultImage: "ff_image_dog_poop",
+                resultUpperText: "THAT SENT PET WASTE INTO THE\nGUTTERS, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
+                resultLowerText: "PET WASTE CONTAINS HARMFUL\nBACTERIA THAT CAN KILL FISH AND\nMAKE OTHER ANIMALS SICK.\nNEXT TIME, PICK UP PET WASTE\nAND PLACE IT IN THE TRASH."
+            }
+        },
+        { // Option 3 - Trash
+            wrongOnly: true,
+            correct: {
+                sprite: {
+                    name: "ff_trash",
+                    position: { x: 0.25, y: 0.95 },
+                    scale: { x: 0.0, y: 0.0 },
+                    extras: []
+
+                },
+                questionTitle: "TRASH ON THE GROUND",
+                questionImage: "ff_image_trash",
+                resultImage: "ff_image_trash_pickup",
+                resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
+                resultLowerText: "TRASH ON THE GROUND IS OFTEN\nBLOWN OR WASHED DOWN\nSTROMDRAIN INLETS AND OUT TO\nLOCAL WATERWAYS. ALWAYS\nPICK UP TRASH WHEN YOU DROP IT."
+            },
+            wrong: {
+                sprite: {
+                    name: "ff_trash",
+                    position: { x: 0.25, y: 0.95 },
+                    scale: { x: 0.9, y: 0.9 },
+                    extras: []
+                },
+                questionTitle: "TRASH ON THE GROUND",
+                questionImage: "ff_image_trash",
+                resultImage: "ff_image_trash",
+                resultUpperText: "THAT SENT LITTER INTO THE\nGUTTERS, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
+                resultLowerText: "TRASH ON THE GROUND IS OFTEN\nBLOWN OR WASHED DOWN\nSTROMDRAIN INLETS AND OUT TO\nLOCAL WATERWAYS. NEXT TIME,\nPICK UP TRASH WHEN YOU DROP IT."
+            }
+        },
+        { // Option 4 - Dog Wash
+            wrongOnly: true,
+            correct: {
+                sprite: {
+                    name: "ff_washing_dog",
+                    position: { x: 0.63, y: 0.60 },
+                    scale: { x: 0.9, y: 0.9 },
+                    extras: [
+                        {
+                            name: "ff_washing_dog_water",
+                            position: { x: 0.745, y: 0.872 },
+                            scale: { x: 0.0, y: 0.0 }
+                        }
+                    ]
+
+                },
+                questionTitle: "WASHING A DOG\n ON THE DRIVEWAY",
+                questionImage: "ff_image_washing_dog_driveway",
+                resultImage: "ff_image_washing_dog_grass",
+                resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
+                resultLowerText: "WHEN YOU WASH YOUR DOG ON\nTHE DRIVEWAY, THE DIRTY WATER\nWILL FLOW INTO THE STORMDRAIN\nAND OUT TO LOCAL WATERWAYS.\nWASHING YOUR DOG IN A BATHTUB\nOR ON THE GRASS KEEPS DIRTY\nWATER OUT OF THE STORMDRAIN."
+            },
+            wrong: {
+                sprite: {
+                    name: "ff_washing_dog",
+                    position: { x: 0.86, y: 0.69 },
+                    scale: { x: 0.9, y: 0.9 },
+                    extras: [
+                        {
+                            name: "ff_washing_dog_water",
+                            position: { x: 0.745, y: 0.872 },
+                            scale: { x: 0.9, y: 0.9 }
+                        }
+                    ]
+                },
+                questionTitle: "WASHING A DOG\n ON THE DRIVEWAY",
+                questionImage: "ff_image_washing_dog_driveway",
+                resultImage: "ff_image_washing_dog_driveway",
+                resultUpperText: "THAT SENT SOAP AND DIRTY\nWATER INTO GUTTERS, DOWN\nTHE STORMDRAIN AND POLLUTED\nLOCAL WATERWAYS!",
+                resultLowerText: "WHEN YOU WASH YOUR DOG ON\nTHE DRIVEWAY, THE DIRTY WATER\nWILL FLOW INTO THE STORMDRAIN\nAND OUT TO LOCAL WATERWAYS.\nNEXT TIME, WASH YOUR DOG IN A\nBATHTUB OR ON THE GRASS KEEPS DIRTY\nWATER OUT OF THE STORMDRAIN."
+            }
+        },
+        { // Option 5 - Car Wash
+            wrongOnly: true,
+            correct: {
+                sprite: {
+                    name: "ff_washing_car",
+                    position: { x: 0.06, y: 0.565 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: [
+                        {
+                            name: "ff_washing_car_water",
+                            position: { x: 0.445, y: 0.76 },
+                            scale: { x: 0.0, y: 0.0 }
+                        }
+                    ]
+
+                },
+                questionTitle: "WASHING A CAR\n ON THE DRIVEWAY",
+                questionImage: "ff_image_washing_car_driveway",
+                resultImage: "ff_image_washing_car_carwash",
+                resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
+                resultLowerText: "WASHING YOUR CAR ON THE\nDRIVEWAY WILL MAKE SOAP AND\nDIRTY WATER FLOW INTO THE LOCAL\nWATERWAYS. USE A CAR\nWASH FACILIITY OR WASH YOUR\nCAR AT HOME AND HAVE THE DIRTY\nWATER FLOW INTO YOUR YARD."
+            },
+            wrong: {
+                sprite: {
+                    name: "ff_washing_car",
+                    position: { x: 0.2195, y: 0.46 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: [
+                        {
+                            name: "ff_washing_car_water",
+                            position: { x: 0.445, y: 0.755 },
+                            scale: { x: 0.95, y: 0.95 }
+                        }
+                    ]
+                },
+                questionTitle: "WASHING A CAR\n ON THE DRIVEWAY",
+                questionImage: "ff_image_washing_car_driveway",
+                resultImage: "ff_image_washing_car_driveway",
+                resultUpperText: "THAT SENT OIL AND DIRTY\nWATER INTO GUTTERS, DOWN\nTHE STORMDRAIN AND POLLUTED\nLOCAL WATERWAYS!",
+                resultLowerText: "WASHING YOUR CAR ON THE\nDRIVEWAY WILL MAKE SOAP AND\nDIRTY WATER FLOW INTO THE LOCAL\nWATERWAYS. NEXT TIME, USE A CAR\nWASH FACILIITY AND HAVE THE DIRTY\nWATER FLOW INTO YOUR YARD."
+            }
+        },
+        { // Option 6 - Oil
+            wrongOnly: true,
+            correct: {
+                sprite: {
+                    name: "ff_dirt",
+                    position: { x: 0.09, y: 0.85 },
+                    scale: { x: 0.0, y: 0.0 },
+                    extras: []
+
+                },
+                questionTitle: "DIRT ON THE SIDEWALK",
+                questionImage: "ff_image_dirt_sidewalk",
+                resultImage: "ff_image_dirt_sweep",
+                resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
+                resultLowerText: "DIRT LEFT ON THE SIDEWALK\nCAN BE BLOWN BY WIND OR\nWASHED BY WATER DOWN\nSTORMDRAINS AND OUT TO LOCAL\nWATERWAYS. MUDDY WATER CAN\nHARM FISH AND OTHER ANIMALS.\nALWAYS SWEEP THE DIRT BACK\nINTO YOUR YARD."
+            },
+            wrong: {
+                sprite: {
+                    name: "ff_dirt",
+                    position: { x: 0.09, y: 0.85 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: []
+                },
+                questionTitle: "DIRT ON THE SIDEWALK",
+                questionImage: "ff_image_dirt_sidewalk",
+                resultImage: "ff_image_dirt_sidewalk",
+                resultUpperText: "THAT SENT DIRT INTO THE\nGUTTERS, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
+                resultLowerText: "DIRT LEFT ON THE SIDEWALK\nCAN BE BLOWN BY WIND OR\nWASHED BY WATER DOWN\nSTORMDRAINS AND OUT TO LOCAL\nWATERWAYS. MUDDY WATER CAN\nHARM FISH AND OTHER ANIMALS.\nNEXT TIME SWEEP THE DIRT BACK\nINTO YOUR YARD."
             }
         }
     ]
