@@ -112,10 +112,7 @@ var IntroState = {
         this.time.events.add(this.nextDelay, function() { this.nextButton.visible = true; }, this);
 
         // Mute button
-        var indexAB = AudioManager.indexAB;
-        var indexC = AudioManager.indexC;
-        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
-        this.muteButton.scale.setTo(0.75);
+        createMuteButton(this);
     },
     update: function() {
         updateCloudSprites(this);
@@ -215,6 +212,7 @@ var IntroState = {
     },
     nextButtonActions: {
         onClick: function() {
+            AudioManager.playSound("bloop_sfx", this);
             this.nextSubScene();
         }
     },

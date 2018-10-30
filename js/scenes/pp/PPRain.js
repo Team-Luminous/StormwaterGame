@@ -52,10 +52,7 @@ var PPRainState = {
         this.add.tween(this.nextButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
         // Mute button
-        var indexAB = AudioManager.indexAB;
-        var indexC = AudioManager.indexC;
-        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
-        this.muteButton.scale.setTo(0.75);
+        createMuteButton(this);
 
         // Start Animation
         this.nextDelay = 1000;
@@ -73,6 +70,7 @@ var PPRainState = {
     },
     nextButtonActions: {
         onClick: function() {
+            AudioManager.playSound("bloop_sfx", this);
             this.state.start("PPResultState");
         }
     }

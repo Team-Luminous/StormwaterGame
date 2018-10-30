@@ -145,6 +145,12 @@ var PPResultState = {
                 this.wetlandsOverlayOilSprite = this.add.sprite(wetlandsX, wetlandsY, "pp_wetlands_overlay_oil");
                 this.wetlandsOverlayOilSprite.anchor.setTo(0.5, 0.5);
                 break;
+            case 5: // Overlay - Mud & Oil - Special
+                this.wetlandsOverlayMudSprite = this.add.sprite(wetlandsX, wetlandsY, "pp_wetlands_overlay_mud");
+                this.wetlandsOverlayMudSprite.anchor.setTo(0.5, 0.5);
+                this.wetlandsOverlayOilSprite = this.add.sprite(wetlandsX, wetlandsY, "pp_wetlands_overlay_oil");
+                this.wetlandsOverlayOilSprite.anchor.setTo(0.5, 0.5);
+                break;
         }   
     
         // Wetlands Foreground
@@ -198,17 +204,18 @@ var PPResultState = {
         if (correct) {
             AudioManager.playSound("correct_sfx", this);
         }
+        else {
+            AudioManager.playSound("wrong_sfx", this);
+        }
 
         // Mute button
-        var indexAB = AudioManager.indexAB;
-        var indexC = AudioManager.indexC;
-        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
-        this.muteButton.scale.setTo(0.75);
+        createMuteButton(this);
     },
     update: function() {
     },
     nextButtonActions: {
         onClick: function() {
+            AudioManager.playSound("bloop_sfx", this);
             if(PPGame.questionsCompleted < 4) {
                 PPGame.questionId = PPGame.questionOrder[++PPGame.questionsCompleted];
                 this.state.start("PPQuestionState");

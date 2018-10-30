@@ -115,9 +115,9 @@ var TextData = {
     ppRain: "OK, LET'S SEE WHAT\nHAPPENS WHEN IT\nRAINS!",
     ffIntro: [
         "IN THIS GAME, YOU WILL\nSEE A NEIGHBORHOOD\nWITH PEOPLE DOING\nDIFFERENT ACTIVITIES.",
-        "IF THE ACTIVITY KEEPS\nSTORMWATER CLEAN,\nCLICK ON IT AND\nCHOOSE 'IT'S OK'.",
-        "IF THE ACTIVITY MAKES\nSTORMWATER DIRTY,\nTHIS IS CALLED POLLUTION.\nCLICK ON IT AND\nCHOOSE 'FIX IT'.",
-        "SEE HOW WELL YOU\nCAN DO BEFORE THE\nTIME RUNS OUT!"
+        "IF THE ACTIVITY KEEPS\nSTORMWATER CLEAN,\nCLICK ON IT AND\nCHOOSE \"IT'S OK\".",
+        "IF THE ACTIVITY MAKES\nSTORMWATER DIRTY,\nTHIS IS CALLED POLLUTION.\nCLICK ON IT AND\nCHOOSE \"FIX IT\".",
+        "SEE HOW WELL YOU\nCAN DO!"// BEFORE THE\nTIME RUNS OUT!"
     ]
 };
 
@@ -698,7 +698,7 @@ var PPGameData = {
                         name: "pp_3_2b",
                         correct: false,
                         wetlands: {
-                            overlay: 1,
+                            overlay: 5,
                             lilypad: true,
                             aliveFish: false,
                             deadFish: true,
@@ -1153,7 +1153,13 @@ var FFGameData = {
                     name: "ff_sprinkler_fixed",
                     position: { x: 0.395, y: 0.75 },
                     scale: { x: 1.0, y: 1.0 },
-                    extras: []
+                    extras: [
+                        {
+                            name: "ff_sprinkler_water",
+                            position: { x: 0.505, y: 0.842 },
+                            scale: { x: 0.0, y: 0.0 }
+                        }
+                    ]
 
                 },
                 questionTitle: "SPRINKLERS ARE\nWATERING THE GRASS",

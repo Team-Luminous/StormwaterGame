@@ -29,16 +29,14 @@ var PPQuestionState = {
         this.questionImageSprite = this.add.sprite(0, 0, question.name);
 
         // Mute button
-        var indexAB = AudioManager.indexAB;
-        var indexC = AudioManager.indexC;
-        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
-        this.muteButton.scale.setTo(0.75);
+        createMuteButton(this);
 
         // Choice Buttons
         var buttonWidth = WIDTH * (options.length == 3 ? 0.33 : 0.42);
         for(var i=0; i<randomOptions.length; ++i) {
             var onClick = function(ref) {
                 PPGame.chosenOptionId = ref.optionIndex;
+                AudioManager.playSound("bloop_sfx", this);
                 this.state.start("PPRainState");
             };
             var xOffset = 0.5 * WIDTH - (buttonWidth * (randomOptions.length - 1)) * 0.5 + buttonWidth * i;

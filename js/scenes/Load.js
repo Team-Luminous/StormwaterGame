@@ -61,6 +61,8 @@ var LoadState = {
         // SFX
         this.load.audio("rain_sfx", "audio/rain.mp3");
         this.load.audio("correct_sfx", "audio/ding.mp3");
+        this.load.audio("wrong_sfx", "audio/Sludge.mp3");
+        this.load.audio("bloop_sfx", "audio/Bloop.mp3");
 
         // Protect or Pollute
         this.load.image("pp_question_text", "assets/pp/pp_question_text.png");
@@ -178,6 +180,6 @@ var LoadState = {
     },
     create: function() {
         this.state.start("TitleState");    
-        //this.state.start("FFGameState");  
+        // this.state.start("FFGameState"); 
     }
 };

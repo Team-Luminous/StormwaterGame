@@ -26,7 +26,7 @@ var AudioManager = {
         // Make sure to not replay same song
         if (!this.currentTitle || this.currentTitle != title) {
             this.currentTitle = title;
-            Game.sound.stopAll();
+            if (this.currentSong != null) this.currentSong.stop();
             this.currentSong = state.add.audio(title, 0.3);
             this.currentSong.loopFull();
         }
@@ -43,4 +43,11 @@ var muteButtonActions =  {
     onClick: function() {
         AudioManager.toggleMusic(this);
     }
+}
+
+function createMuteButton(scene) {
+    var indexAB = AudioManager.indexAB;
+    var indexC = AudioManager.indexC;
+    scene.muteButton = scene.add.button(0.892 * WIDTH, 0.02 * HEIGHT, "button_sound", muteButtonActions.onClick, scene, indexAB, indexAB, indexC);
+    scene.muteButton.scale.setTo(0.75);
 }

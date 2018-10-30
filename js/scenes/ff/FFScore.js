@@ -41,6 +41,9 @@ var FFScoreState = {
         this.replayButton.anchor.setTo(0.5, 0.5);
         this.add.tween(this.replayButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
+        // Mute button
+        createMuteButton(this);
+
         // Start Animation
         this.animationSpeed = 500;
 
@@ -49,17 +52,22 @@ var FFScoreState = {
 
         // Reset PPGame
         FFGame.reset();
+
+        // Audio
+        AudioManager.playSong("results_music", this);
     },
     update: function() {
         updateCloudSprites(this);
     },
     homeButtonActions: {
         onClick: function() {
+            AudioManager.playSound("bloop_sfx", this);
             this.state.start("TitleState");
         }
     },    
     replayButtonActions: {
         onClick: function() {
+            AudioManager.playSound("bloop_sfx", this);
             this.state.start("FFGameState");
         }
     }
