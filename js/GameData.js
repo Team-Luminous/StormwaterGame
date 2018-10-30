@@ -33,39 +33,42 @@ PPGame.reset();
 var FFGame = {
     reset: function() {
         this.score = 0;
+        this.completed = 0;
 
         // This will produce:
         //  1 Correct answer
         //  1 Correct/Wrong answer (50% chance)
         //  4 Wrong answers
 
-        // var wrongOnly = [];
-        // var both = [];
-        // for(var i=0; i<FFGameData.options.length; ++i) {
-        //     if(FFGameData.options[i].wrongOnly) wrongOnly.push(i);
-        //     else both.push(i);
-        // }
-        // shuffleArray(wrongOnly);
-        // shuffleArray(both);
+        /*
+        var wrongOnly = [];
+        var both = [];
+        for(var i=0; i<FFGameData.options.length; ++i) {
+            if(FFGameData.options[i].wrongOnly) wrongOnly.push(i);
+            else both.push(i);
+        }
+        shuffleArray(wrongOnly);
+        shuffleArray(both);
 
-        // this.options = [
-        //     {
-        //         id: both[0],
-        //         wrong: false
-        //     },
-        //     {
-        //         id: both[1],
-        //         wrong: (Math.random() >= 0.5 ? true : false)
-        //     }
-        // ];
+        this.options = [
+            {
+                id: both[0],
+                wrong: false
+            },
+            {
+                id: both[1],
+                wrong: (Math.random() >= 0.5 ? true : false)
+            }
+        ];
 
-        // for(var i=0; i<4; ++i) {
-        //     this.options.push({
-        //         id: wrongOnly[i],
-        //         wrong: true
-        //     });
-        // }
-
+        for(var i=0; i<4; ++i) {
+            this.options.push({
+                id: wrongOnly[i],
+                wrong: true
+            });
+        }
+        */
+        
         this.options = [
             {
                 id: 0,
@@ -883,7 +886,7 @@ var FFGameData = {
         "OOPS!"
     ],
     finalScore: function(x) {
-        return ""
+        return "FINAL SCORE\nYOU FIXED " + x + " OF THE 6\nPOLLUTING ACTIVITIES!"
     },
     options: [
         { // Option 0 - Downspout

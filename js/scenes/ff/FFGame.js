@@ -190,5 +190,13 @@ var FFGameState = {
     closeResult: function() {
         this.resultsBoxGroup.visible = false;
         this.setOptionsClickable(true);
+
+        FFGame.completed++;
+        if(FFGame.completed >= FFGame.options.length) {
+            this.finishedButton = this.add.button(0.9 * WIDTH, 0.85 * HEIGHT, "button_play", function(){ this.state.start("FFScoreState"); }, this, 0, 0, 1);
+            this.finishedButton.anchor.setTo(0.5, 0.5);
+            this.add.tween(this.finishedButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true, 0, -1, true);
+
+        }
     }
 };
