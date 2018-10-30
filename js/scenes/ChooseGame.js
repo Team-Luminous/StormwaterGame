@@ -33,6 +33,12 @@ var ChooseGameState = {
         this.ppButton.anchor.setTo(0.5, 0.5);
         this.add.tween(this.ppButton.scale).to({ x: 0.9, y: 0.9 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
+        // Mute button
+        var indexAB = AudioManager.indexAB;
+        var indexC = AudioManager.indexC;
+        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
+        this.muteButton.scale.setTo(0.75);
+
         // Start Animation        
         this.animationSpeed = 500;
 

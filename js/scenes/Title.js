@@ -23,6 +23,14 @@ var TitleState = {
         this.playButton.anchor.setTo(0.5, 0.5);
         this.add.tween(this.playButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
+        // Mute button
+        var indexAB = AudioManager.indexAB;
+        var indexC = AudioManager.indexC;
+        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
+        this.muteButton.scale.setTo(0.75);
+
+        // Audio
+        AudioManager.playSong("title_music", this);
     },
     update: function() {
         updateCloudSprites(this);
@@ -31,5 +39,5 @@ var TitleState = {
         onClick: function() {
             this.state.start("IntroState");
         }
-    }
+    },
 };

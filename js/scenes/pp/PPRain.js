@@ -51,6 +51,12 @@ var PPRainState = {
         this.nextButton.visible = false;
         this.add.tween(this.nextButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
+        // Mute button
+        var indexAB = AudioManager.indexAB;
+        var indexC = AudioManager.indexC;
+        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
+        this.muteButton.scale.setTo(0.75);
+
         // Start Animation
         this.nextDelay = 1000;
         this.animationSpeed = 500;
@@ -58,6 +64,10 @@ var PPRainState = {
         this.add.tween(this.speechText1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
         this.add.tween(this.speechBox1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
         this.time.events.add(this.nextDelay, function() { this.nextButton.visible = true; }, this);
+
+        // Play sound
+        AudioManager.playSound("rain_sfx", this);
+        
     },
     update: function() {
     },
