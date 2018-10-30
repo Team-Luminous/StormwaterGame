@@ -193,6 +193,17 @@ var PPResultState = {
         this.add.tween(this.lowerText.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
         this.add.tween(this.speechBox.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
         this.time.events.add(this.nextDelay, function() { this.nextButton.visible = true; }, this);
+
+        // SFX
+        if (correct) {
+            AudioManager.playSound("correct_sfx", this);
+        }
+
+        // Mute button
+        var indexAB = AudioManager.indexAB;
+        var indexC = AudioManager.indexC;
+        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
+        this.muteButton.scale.setTo(0.75);
     },
     update: function() {
     },

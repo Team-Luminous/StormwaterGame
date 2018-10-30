@@ -54,6 +54,13 @@ var LoadState = {
 
         // Audio
         this.load.audio("title_music", "audio/JoyInTheWorldNew.mp3");
+        this.load.audio("pp_music", "audio/matchingMusic.mp3");
+        this.load.audio("ff_music", "audio/bgMusic.mp3");
+        this.load.audio("results_music", "audio/CoffeeBreakNew.mp3");
+
+        // SFX
+        this.load.audio("rain_sfx", "audio/rain.mp3");
+        this.load.audio("correct_sfx", "audio/ding.mp3");
 
         // Protect or Pollute
         this.load.image("pp_question_text", "assets/pp/pp_question_text.png");
@@ -169,11 +176,6 @@ var LoadState = {
         this.load.image("ff_washing_dog_water", "assets/ff/ff_washing_dog_water.png");
     },
     create: function() {
-        
-        // Audio
-        this.titleMusic = this.add.audio("title_music", 0.2);
-        this.titleMusic.loopFull();
-
         this.state.start("TitleState");    
         //this.state.start("FFGameState");  
     }
