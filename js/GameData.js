@@ -37,19 +37,10 @@ var FFGame = {
 
         // This will produce:
         //  1 Correct answer
-        //  1 Correct/Wrong answer (50% chance)
-        //  4 Wrong answers
+        //  2 Correct/Wrong answer (50% chance)
+        //  3 Wrong answers
 
-        /*
-        var wrongOnly = [];
-        var both = [];
-        for(var i=0; i<FFGameData.options.length; ++i) {
-            if(FFGameData.options[i].wrongOnly) wrongOnly.push(i);
-            else both.push(i);
-        }
-        shuffleArray(wrongOnly);
-        shuffleArray(both);
-
+        var both = shuffleArray([0, 1, 4, 5, 8]);
         this.options = [
             {
                 id: both[0],
@@ -58,43 +49,20 @@ var FFGame = {
             {
                 id: both[1],
                 wrong: (Math.random() >= 0.5 ? true : false)
+            },
+            {
+                id: both[2],
+                wrong: (Math.random() >= 0.5 ? true : false)
             }
         ];
-
-        for(var i=0; i<4; ++i) {
+        
+        var wrongOnly = shuffleArray([2, 3, 6, 7, both[3], both[4]]);
+        for(var i=0; i<3; ++i) {
             this.options.push({
                 id: wrongOnly[i],
                 wrong: true
             });
         }
-        */
-        
-        this.options = [
-            {
-                id: 0,
-                wrong: false
-            },
-            {
-                id: 1,
-                wrong: true
-            },
-            {
-                id: 2,
-                wrong: true
-            },
-            {
-                id: 3,
-                wrong: true
-            },
-            {
-                id: 4,
-                wrong: true
-            },
-            {
-                id: 5,
-                wrong: true
-            }
-        ]
     }
 };
 FFGame.reset();
@@ -986,7 +954,7 @@ var FFGameData = {
 
                 },
                 questionTitle: "PET WASTE ON THE LAWN",
-                questionImage: "ff_pickup_poop",
+                questionImage: "ff_image_pickup_poop",
                 resultImage: "ff_image_pickup_poop",
                 resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
                 resultLowerText: "PET WASTE CONTAINS HARMFUL BACTERIA\nTHAT CAN POLLUTE STORMWATER AND LOCAL\nWATERWAYS. ALWAYS PICK UP PET\nWASTE AND PLACE IT IN THE TRASH"
@@ -1036,7 +1004,7 @@ var FFGameData = {
             }
         },
         { // Option 4 - Dog Wash
-            wrongOnly: true,
+            wrongOnly: false,
             correct: {
                 sprite: {
                     name: "ff_washing_dog",
@@ -1051,8 +1019,8 @@ var FFGameData = {
                     ]
 
                 },
-                questionTitle: "WASHING A DOG\n ON THE DRIVEWAY",
-                questionImage: "ff_image_washing_dog_driveway",
+                questionTitle: "WASHING A DOG\n ON THE GRASS",
+                questionImage: "ff_image_washing_dog_grass",
                 resultImage: "ff_image_washing_dog_grass",
                 resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
                 resultLowerText: "WHEN YOU WASH YOUR DOG ON\nTHE DRIVEWAY, THE DIRTY WATER\nWILL FLOW INTO THE STORMDRAIN\nAND OUT TO LOCAL WATERWAYS.\nWASHING YOUR DOG IN A BATHTUB\nOR ON THE GRASS KEEPS DIRTY\nWATER OUT OF THE STORMDRAIN."
@@ -1073,12 +1041,12 @@ var FFGameData = {
                 questionTitle: "WASHING A DOG\n ON THE DRIVEWAY",
                 questionImage: "ff_image_washing_dog_driveway",
                 resultImage: "ff_image_washing_dog_driveway",
-                resultUpperText: "THAT SENT SOAP AND DIRTY\nWATER INTO GUTTERS, DOWN\nTHE STORMDRAIN AND POLLUTED\nLOCAL WATERWAYS!",
+                resultUpperText: "THAT SENT SOAP AND DIRTY WATER\nINTO GUTTERS, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
                 resultLowerText: "WHEN YOU WASH YOUR DOG ON\nTHE DRIVEWAY, THE DIRTY WATER\nWILL FLOW INTO THE STORMDRAIN\nAND OUT TO LOCAL WATERWAYS.\nNEXT TIME, WASH YOUR DOG IN A\nBATHTUB OR ON THE GRASS KEEPS DIRTY\nWATER OUT OF THE STORMDRAIN."
             }
         },
         { // Option 5 - Car Wash
-            wrongOnly: true,
+            wrongOnly: false,
             correct: {
                 sprite: {
                     name: "ff_washing_car",
@@ -1093,8 +1061,8 @@ var FFGameData = {
                     ]
 
                 },
-                questionTitle: "WASHING A CAR\n ON THE DRIVEWAY",
-                questionImage: "ff_image_washing_car_driveway",
+                questionTitle: "WASHING A CAR\n ON THE GRASS",
+                questionImage: "ff_image_washing_car_carwash",
                 resultImage: "ff_image_washing_car_carwash",
                 resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
                 resultLowerText: "WASHING YOUR CAR ON THE\nDRIVEWAY WILL MAKE SOAP AND\nDIRTY WATER FLOW INTO THE LOCAL\nWATERWAYS. USE A CAR\nWASH FACILIITY OR WASH YOUR\nCAR AT HOME AND HAVE THE DIRTY\nWATER FLOW INTO YOUR YARD."
@@ -1115,11 +1083,11 @@ var FFGameData = {
                 questionTitle: "WASHING A CAR\n ON THE DRIVEWAY",
                 questionImage: "ff_image_washing_car_driveway",
                 resultImage: "ff_image_washing_car_driveway",
-                resultUpperText: "THAT SENT OIL AND DIRTY\nWATER INTO GUTTERS, DOWN\nTHE STORMDRAIN AND POLLUTED\nLOCAL WATERWAYS!",
+                resultUpperText: "THAT SENT OIL AND DIRTY WATER\nINTO GUTTERS, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
                 resultLowerText: "WASHING YOUR CAR ON THE\nDRIVEWAY WILL MAKE SOAP AND\nDIRTY WATER FLOW INTO THE LOCAL\nWATERWAYS. NEXT TIME, USE A CAR\nWASH FACILIITY AND HAVE THE DIRTY\nWATER FLOW INTO YOUR YARD."
             }
         },
-        { // Option 6 - Oil
+        { // Option 6 - Dirt
             wrongOnly: true,
             correct: {
                 sprite: {
@@ -1127,13 +1095,12 @@ var FFGameData = {
                     position: { x: 0.09, y: 0.85 },
                     scale: { x: 0.0, y: 0.0 },
                     extras: []
-
                 },
                 questionTitle: "DIRT ON THE SIDEWALK",
                 questionImage: "ff_image_dirt_sidewalk",
                 resultImage: "ff_image_dirt_sweep",
                 resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
-                resultLowerText: "DIRT LEFT ON THE SIDEWALK\nCAN BE BLOWN BY WIND OR\nWASHED BY WATER DOWN\nSTORMDRAINS AND OUT TO LOCAL\nWATERWAYS. MUDDY WATER CAN\nHARM FISH AND OTHER ANIMALS.\nALWAYS SWEEP THE DIRT BACK\nINTO YOUR YARD."
+                resultLowerText: "DIRT LEFT ON THE SIDEWALK CAN BE\nBLOWN BY WIND OR WASHED BY WATER\nDOWN STORMDRAINS AND OUT TO LOCAL\nWATERWAYS. MUDDY WATER CAN HARM\nFISH AND OTHER ANIMALS. ALWAYS SWEEP\nTHE DIRT BACK INTO YOUR YARD."
             },
             wrong: {
                 sprite: {
@@ -1146,7 +1113,73 @@ var FFGameData = {
                 questionImage: "ff_image_dirt_sidewalk",
                 resultImage: "ff_image_dirt_sidewalk",
                 resultUpperText: "THAT SENT DIRT INTO THE\nGUTTERS, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
-                resultLowerText: "DIRT LEFT ON THE SIDEWALK\nCAN BE BLOWN BY WIND OR\nWASHED BY WATER DOWN\nSTORMDRAINS AND OUT TO LOCAL\nWATERWAYS. MUDDY WATER CAN\nHARM FISH AND OTHER ANIMALS.\nNEXT TIME SWEEP THE DIRT BACK\nINTO YOUR YARD."
+                resultLowerText: "DIRT LEFT ON THE SIDEWALK CAN BE\nBLOWN BY WIND OR WASHED BY WATER\nDOWN STORMDRAINS AND OUT TO LOCAL\nWATERWAYS. MUDDY WATER CAN HARM\nFISH AND OTHER ANIMALS. NEXT TIME\nSWEEP THE DIRT BACK INTO YOUR YARD."
+            }
+        },
+        { // Option 7 - Oil
+            wrongOnly: true,
+            correct: {
+                sprite: {
+                    name: "ff_car",
+                    position: { x: 0.77, y: 0.52 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: []
+
+                },
+                questionTitle: "",
+                questionImage: "",
+                resultImage: "ff_image_car",
+                resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
+                resultLowerText: "MOTOR OIL IS A SERIOUS\nPOLLUTANT. USE KITTY LITTER TO\nSOAK UP THE OIL, THEN SWEEP UP\nTHE SOAKED KITTY LITTER.\nYOU CAN ALSO USE A RAG TO\nWIPE UP THE OIL."
+            },
+            wrong: {
+                sprite: {
+                    name: "ff_car_oil",
+                    position: { x: 0.77, y: 0.52 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: []
+                },
+                questionTitle: "CAR DRIPPING OIL\nON THE DRIVEWAY",
+                questionImage: "ff_image_car_oil",
+                resultImage: "ff_image_car_oil",
+                resultUpperText: "THAT SENT OIL INTO THE\nGUTTERS, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
+                resultLowerText: "MOTOR OIL IS A SERIOUS\nPOLLUTANT. NEXT TIME, USE KITTY\nLITTER TO SOAK UP THE OIL,\nTHEN SWEEP UP THE SOAKED KITTY\nLITTER. YOU CAN ALSO USE A RAG\nTO WIPE UP THE OIL."
+            }
+        },
+        { // Option 8 - Sprinkler
+            wrongOnly: false,
+            correct: {
+                sprite: {
+                    name: "ff_sprinkler_fixed",
+                    position: { x: 0.395, y: 0.75 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: []
+
+                },
+                questionTitle: "SPRINKLERS ARE\nWATERING THE GRASS",
+                questionImage: "ff_image_sprinkler_fixed",
+                resultImage: "ff_image_sprinkler_fixed",
+                resultUpperText: "YOU PREVENTED POLLUTION AND\nKEPT THE LOCAL WATERWAYS CLEAN!",
+                resultLowerText: "WATER RUNNING OFF YOUR YARD\nCAN CARRY FERTILIZERS\nAND OTHER CHEMICALS THAT\nPOLLUTE STORMWATER AND LOCAL\nWATERWAYS."
+            },
+            wrong: {
+                sprite: {
+                    name: "ff_sprinkler",
+                    position: { x: 0.36, y: 0.75 },
+                    scale: { x: 1.0, y: 1.0 },
+                    extras: [
+                        {
+                            name: "ff_sprinkler_water",
+                            position: { x: 0.505, y: 0.842 },
+                            scale: { x: 1.0, y: 1.0 }
+                        }
+                    ]
+                },
+                questionTitle: "SPRINKLERS ARE\nWATERING THE SIDEWALK",
+                questionImage: "ff_image_sprinkler_sidewalk",
+                resultImage: "ff_image_sprinkler_sidewalk",
+                resultUpperText: "THAT SENT FERTILIZERS INTO THE\nGUTTERS, DOWN THE STORMDRAIN\nAND POLLUTED LOCAL WATERWAYS!",
+                resultLowerText: "MAKE SURE YOUR SPRINKLERS AND\nIRRIGATION TIMERS ARE ADJUSTED\nAND DON'T CAUSE WATER TO RUNOFF\nTHE LANDSCAPING, CARRYING\nFERTILIZERS AND OTHER CHEMICALS\nOUT TO LOCAL WATERWAYS."
             }
         }
     ]

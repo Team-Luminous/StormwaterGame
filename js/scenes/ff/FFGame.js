@@ -53,6 +53,17 @@ var FFGameState = {
             this.optionSprites.push(optionSprite);
         }
 
+        // Bush
+        this.bushSprite = this.add.sprite(0.93 * WIDTH, 0.4 * HEIGHT, "ff_bush");
+        this.bushSprite.anchor.setTo(0.5, 0.5);
+
+        // Sprinklers
+        this.sprinklerSprite1 = this.add.sprite(0.46 * WIDTH, 0.58 * HEIGHT, "ff_sprinkler");
+        this.sprinklerSprite1.anchor.setTo(0.5, 0.5);
+
+        this.sprinklerSprite2 = this.add.sprite(0.58 * WIDTH, 0.44 * HEIGHT, "ff_sprinkler");
+        this.sprinklerSprite2.anchor.setTo(0.5, 0.5);
+
         // Question Box
         this.questionBoxGroup = this.add.group();
         this.questionBoxGroup.position.setTo(0.5 * WIDTH, 0.5 * HEIGHT);
