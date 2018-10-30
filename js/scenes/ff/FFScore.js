@@ -1,6 +1,6 @@
 'use strict';
 
-var PPScoreState = {
+var FFScoreState = {
     preload: function() {
     },
     create: function() {
@@ -17,7 +17,7 @@ var PPScoreState = {
         this.professorSprite1 = this.add.sprite(0.6 * WIDTH, 0.39 * HEIGHT, "professor_3");
 
         // Title
-        this.titleSprite = this.add.sprite(0.5 * WIDTH, 0.2 * HEIGHT, "pp_score_title");
+        this.titleSprite = this.add.sprite(0.5 * WIDTH, 0.2 * HEIGHT, "ff_score_title");
         this.titleSprite.anchor.setTo(0.5, 0.5);
 
         // Speech Box
@@ -25,7 +25,7 @@ var PPScoreState = {
         this.speechBox.anchor.setTo(0.44, 0.5);
 
         // Score
-        this.scoreText = this.add.text(0.32 * WIDTH, 0.5 * HEIGHT, PPGameData.finalScore(PPGame.score), TextStyle.centeredExtraLarge);
+        this.scoreText = this.add.text(0.32 * WIDTH, 0.5 * HEIGHT, FFGameData.finalScore(FFGame.score), TextStyle.centeredExtraLarge);
         this.scoreText.anchor.setTo(0.5, 0.5);
         this.scoreText.lineSpacing = TextStyle.lineSpacing;
         this.scoreText.addFontWeight('bold', 0);
@@ -51,7 +51,7 @@ var PPScoreState = {
         this.add.tween(this.speechBox.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
 
         // Reset PPGame
-        PPGame.reset();
+        FFGame.reset();
 
         // Audio
         AudioManager.playSong("results_music", this);
@@ -68,7 +68,7 @@ var PPScoreState = {
     replayButtonActions: {
         onClick: function() {
             AudioManager.playSound("bloop_sfx", this);
-            this.state.start("PPLevelSelectState");
+            this.state.start("FFGameState");
         }
     }
 };

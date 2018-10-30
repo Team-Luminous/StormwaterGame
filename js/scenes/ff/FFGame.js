@@ -56,6 +56,17 @@ var FFGameState = {
             this.optionSprites.push(optionSprite);
         }
 
+        // Bush
+        this.bushSprite = this.add.sprite(0.93 * WIDTH, 0.4 * HEIGHT, "ff_bush");
+        this.bushSprite.anchor.setTo(0.5, 0.5);
+
+        // Sprinklers
+        this.sprinklerSprite1 = this.add.sprite(0.46 * WIDTH, 0.58 * HEIGHT, "ff_sprinkler");
+        this.sprinklerSprite1.anchor.setTo(0.5, 0.5);
+
+        this.sprinklerSprite2 = this.add.sprite(0.58 * WIDTH, 0.44 * HEIGHT, "ff_sprinkler");
+        this.sprinklerSprite2.anchor.setTo(0.5, 0.5);
+
         // Question Box
         this.questionBoxGroup = this.add.group();
         this.questionBoxGroup.position.setTo(0.5 * WIDTH, 0.5 * HEIGHT);
@@ -127,10 +138,7 @@ var FFGameState = {
         this.add.tween(this.resultsNextButton.scale).to({ x: 0.9, y: 0.9 }, 600, "Linear", true, 0, -1, true);
 
         // Mute button
-        var indexAB = AudioManager.indexAB;
-        var indexC = AudioManager.indexC;
-        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
-        this.muteButton.scale.setTo(0.75);
+        createMuteButton(this);
     },
     update: function() {
     },
@@ -143,6 +151,8 @@ var FFGameState = {
         }
     },
     startQuestion: function() {
+        AudioManager.playSound("bloop_sfx", this);
+
         this.setOptionsClickable(false);
         this.questionBoxGroup.visible = true;
         this.add.tween(this.questionBoxGroup.scale).from({ x: 0.5, y: 0.5 }, 500, "Elastic", true);
@@ -155,6 +165,8 @@ var FFGameState = {
         this.questionImageSprite.loadTexture(childData.questionImage);
     },
     startResult: function(fixIt) {
+        AudioManager.playSound("bloop_sfx", this);
+
         this.questionBoxGroup.visible = false;
         
         var option = FFGame.options[this.currentQuestionId];
@@ -181,6 +193,12 @@ var FFGameState = {
         // This will only change the option if its currently wrong and you fix it
         // Maybe change it to also include if its currently right and you choose wrong
         if(correct) {
+            // SFX
+            AudioManager.playSound("correct_sfx", this);
+
+            // Increase Score
+            FFGame.score++;
+
             if(option.wrong) {
                 var spriteData = data.correct.sprite;
                 sprite.clickable.loadTexture(spriteData.name);
@@ -192,12 +210,27 @@ var FFGameState = {
                     sprite.extras[i].scale.setTo(spriteData.extras[i].scale.x, spriteData.extras[i].scale.y);
                 }
             }
-
-            FFGame.score++;
+        }
+        else {
+            // SFX
+            AudioManager.playSound("wrong_sfx", this);
         }
     },
     closeResult: function() {
+        AudioManager.playSound("bloop_sfx", this);
+
         this.resultsBoxGroup.visible = false;
         this.setOptionsClickable(true);
+
+        FFGame.completed++;
+        if(FFGame.completed >= FFGame.options.length) {
+            var onClick = function() {                
+                AudioManager.playSound("bloop_sfx", this);
+                this.state.start("FFScoreState");
+            };
+            this.finishedButton = this.add.button(0.9 * WIDTH, 0.85 * HEIGHT, "button_play", onClick, this, 0, 0, 1);
+            this.finishedButton.anchor.setTo(0.5, 0.5);
+            this.add.tween(this.finishedButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true, 0, -1, true);
+        }
     }
 };

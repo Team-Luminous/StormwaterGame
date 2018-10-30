@@ -43,10 +43,7 @@ var PPLevelSelectState = {
         this.add.tween(this.level3Btn.scale).to({ x: 0.9, y: 0.9 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
         // Mute button
-        var indexAB = AudioManager.indexAB;
-        var indexC = AudioManager.indexC;
-        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
-        this.muteButton.scale.setTo(0.75);
+        createMuteButton(this);
 
         // Start Animation
         this.animationSpeed = 500;
@@ -63,14 +60,17 @@ var PPLevelSelectState = {
     buttonActions: {
         onClickOne: function() {
             PPGame.levelId = 0;
+            AudioManager.playSound("bloop_sfx", this);
             this.state.start("PPQuestionState");
         },
         onClickTwo: function() {
             PPGame.levelId = 1;
+            AudioManager.playSound("bloop_sfx", this);
             this.state.start("PPQuestionState");
         },
         onClickThree: function() {
             PPGame.levelId = 2;
+            AudioManager.playSound("bloop_sfx", this);
             this.state.start("PPQuestionState");
         }
     },

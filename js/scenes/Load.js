@@ -61,6 +61,8 @@ var LoadState = {
         // SFX
         this.load.audio("rain_sfx", "audio/rain.mp3");
         this.load.audio("correct_sfx", "audio/ding.mp3");
+        this.load.audio("wrong_sfx", "audio/Sludge.mp3");
+        this.load.audio("bloop_sfx", "audio/Bloop.mp3");
 
         // Protect or Pollute
         this.load.image("pp_question_text", "assets/pp/pp_question_text.png");
@@ -107,7 +109,8 @@ var LoadState = {
         this.load.image("ff_background", "assets/ff/ff_background.png");
         this.load.image("ff_bush", "assets/ff/ff_bush.png");
 		this.load.image("ff_house_1", "assets/ff/ff_house_1.png");
-		this.load.image("ff_house_2", "assets/ff/ff_house_2.png");
+        this.load.image("ff_house_2", "assets/ff/ff_house_2.png");
+        this.load.image("ff_score_title", "assets/ff/ff_score_title.png");
 
         this.load.image("ff_question_box", "assets/ff/ff_question_box.png");
         this.load.image("ff_oops_box", "assets/ff/ff_oops_box.png");
@@ -177,6 +180,6 @@ var LoadState = {
     },
     create: function() {
         this.state.start("TitleState");    
-        //this.state.start("FFGameState");  
+        // this.state.start("FFGameState"); 
     }
 };

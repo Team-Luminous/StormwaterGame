@@ -58,16 +58,13 @@ var FFIntroState = {
         this.speechText4.resolution = 2;
 
         // Buttons
-        this.nextButton = this.add.button(0.65 * WIDTH, 0.325 * HEIGHT, "button_play", this.nextButtonActions.onClick, this, 0, 0, 1);
+        this.nextButton = this.add.button(0.5 * WIDTH, 0.2 * HEIGHT, "button_play", this.nextButtonActions.onClick, this, 0, 0, 1);
         this.nextButton.anchor.setTo(0.5, 0.5);
         this.nextButton.visible = false;
         this.add.tween(this.nextButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
         // Mute button
-        var indexAB = AudioManager.indexAB;
-        var indexC = AudioManager.indexC;
-        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
-        this.muteButton.scale.setTo(0.75);
+        createMuteButton(this);
 
         // Start Animation
         this.nextDelay = 1000;
@@ -153,6 +150,7 @@ var FFIntroState = {
     },
     nextButtonActions: {
         onClick: function() {
+            AudioManager.playSound("bloop_sfx", this);
             this.nextSubScene();
         }
     }

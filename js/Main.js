@@ -21,6 +21,7 @@ window.onload = function() {
 
     Game.state.add("FFIntroState", FFIntroState);
     Game.state.add("FFGameState", FFGameState);
+    Game.state.add("FFScoreState", FFScoreState);
 
     Game.state.start("LoadState");
 };

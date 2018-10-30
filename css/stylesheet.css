@@ -1,5 +1,5 @@
 body {
-    font-family: "Comic Sans MS", "Comic Sans", "Chalkboard", cursive, sans-serif;
+    font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
     margin: 0px 0px 1px 0px; /* the extra 1px allows the iOS inner/outer check to work */
     background: #000;
 }
