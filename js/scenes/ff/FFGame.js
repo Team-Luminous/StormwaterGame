@@ -11,6 +11,9 @@ var FFGameState = {
         this.currentQuestionId = 0;
         this.optionSprites = [];
 
+        // Audio
+        AudioManager.playSong("ff_music", this);
+
         for(var i=0; i<FFGame.options.length; ++i) {
             var option = FFGame.options[i];
             var data = FFGameData.options[option.id];
@@ -133,6 +136,12 @@ var FFGameState = {
         this.resultsNextButton.anchor.setTo(0.5, 0.5);
         this.resultsBoxGroup.add(this.resultsNextButton);
         this.add.tween(this.resultsNextButton.scale).to({ x: 0.9, y: 0.9 }, 600, "Linear", true, 0, -1, true);
+
+        // Mute button
+        var indexAB = AudioManager.indexAB;
+        var indexC = AudioManager.indexC;
+        this.muteButton = this.add.button(0.9 * WIDTH, 0.01 * HEIGHT, "button_sound", muteButtonActions.onClick, this, indexAB, indexAB, indexC);
+        this.muteButton.scale.setTo(0.75);
     },
     update: function() {
     },
