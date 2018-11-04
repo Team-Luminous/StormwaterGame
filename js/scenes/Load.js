@@ -135,6 +135,7 @@ var LoadState = {
         this.load.image("ff_image_trashbin_open", "assets/ff/ff_image_trashbin_open.png");
         this.load.image("ff_image_trashbin_closed", "assets/ff/ff_image_trashbin_closed.png");
         this.load.image("ff_image_washing_car_carwash", "assets/ff/ff_image_washing_car_carwash.png");
+        this.load.image("ff_image_washing_car_yard", "assets/ff/ff_image_washing_car_yard.png");
         this.load.image("ff_image_washing_car_driveway", "assets/ff/ff_image_washing_car_driveway.png");
         this.load.image("ff_image_washing_dog_driveway", "assets/ff/ff_image_washing_dog_driveway.png");
         this.load.image("ff_image_washing_dog_grass", "assets/ff/ff_image_washing_dog_grass.png");
@@ -180,6 +181,6 @@ var LoadState = {
     },
     create: function() {
         this.state.start("TitleState");    
-        // this.state.start("FFGameState"); 
+        //this.state.start("FFGameState"); 
     }
 };

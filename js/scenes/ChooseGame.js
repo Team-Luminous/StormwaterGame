@@ -41,6 +41,9 @@ var ChooseGameState = {
 
         this.add.tween(this.speechText1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
         this.add.tween(this.speechBox1.scale).from({ x: 0.0, y: 0.0 }, this.animationSpeed, "Elastic", true);
+
+        // Audio
+        AudioManager.playSong("title_music", this);
     },
     update: function() {
         updateCloudSprites(this);
