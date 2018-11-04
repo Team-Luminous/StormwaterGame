@@ -174,6 +174,7 @@ var FFGameState = {
 
         var correct = (fixIt == option.wrong);
         var dataChild = (correct ? data.correct : data.wrong);
+        var dataChildText = (option.wrong ? (correct ? data.wrong.correct : data.wrong.wrong) : (correct ? data.correct.correct : data.correct.wrong));
 
         this.resultsBoxSprite.loadTexture((correct ? "ff_correct_box" : "ff_oops_box"));
         this.resultsBoxGroup.visible = true;
@@ -182,8 +183,8 @@ var FFGameState = {
         this.time.events.add(1000, function() { this.resultsNextButton.visible = true; }, this);
 
         this.resultsHeaderText.setText(FFGameData.resultsHeader[(!correct ? 2 : (!fixIt ? 1 : 0))]);
-        this.resultsUpperText.setText(dataChild.resultUpperText);
-        this.resultsLowerText.setText(dataChild.resultLowerText);
+        this.resultsUpperText.setText(dataChildText.resultUpperText);
+        this.resultsLowerText.setText(dataChildText.resultLowerText);
         this.resultsImageSprite.loadTexture(dataChild.resultImage);
 
         var sprite = this.optionSprites[this.currentQuestionId];
@@ -223,14 +224,15 @@ var FFGameState = {
         this.setOptionsClickable(true);
 
         FFGame.completed++;
-        if(FFGame.completed >= FFGame.options.length) {
-            var onClick = function() {                
-                AudioManager.playSound("bloop_sfx", this);
-                this.state.start("FFScoreState");
-            };
-            this.finishedButton = this.add.button(0.9 * WIDTH, 0.85 * HEIGHT, "button_play", onClick, this, 0, 0, 1);
-            this.finishedButton.anchor.setTo(0.5, 0.5);
-            this.add.tween(this.finishedButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true, 0, -1, true);
+        if(FFGame.completed >= FFGame.options.length) {         
+            this.time.events.add(1000, function() { this.state.start("FFScoreState"); }, this);
+
+            // var onClick = function() {                
+            //     AudioManager.playSound("bloop_sfx", this);
+            // };
+            // this.finishedButton = this.add.button(0.9 * WIDTH, 0.85 * HEIGHT, "button_play", onClick, this, 0, 0, 1);
+            // this.finishedButton.anchor.setTo(0.5, 0.5);
+            // this.add.tween(this.finishedButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true, 0, -1, true);
         }
     }
 };

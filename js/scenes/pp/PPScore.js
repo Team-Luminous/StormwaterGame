@@ -62,7 +62,7 @@ var PPScoreState = {
     homeButtonActions: {
         onClick: function() {
             AudioManager.playSound("bloop_sfx", this);
-            this.state.start("TitleState");
+            this.state.start("ChooseGameState");
         }
     },    
     replayButtonActions: {

@@ -48,6 +48,8 @@ var FFIntroState = {
         this.speechText3 = this.add.text(0.215 * WIDTH, 0.345 * HEIGHT, TextData.ffIntro[2], TextStyle.centered);
         this.speechText3.anchor.setTo(0.5, 0.5);
         this.speechText3.lineSpacing = TextStyle.lineSpacing;
+        this.speechText3.addFontWeight('bold', 52);
+        this.speechText3.addFontWeight('normal', 61);
         this.speechText3.visible = false;
         this.speechText3.resolution = 2;
 
