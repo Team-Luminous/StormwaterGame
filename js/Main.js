@@ -7,10 +7,12 @@ var Game;
 window.onload = function() {
     Game = new Phaser.Game(WIDTH, HEIGHT, Phaser.AUTO, "gameDiv");
 
+    Game.state.add("BootState", BootState);
     Game.state.add("LoadState", LoadState);
     Game.state.add("TitleState", TitleState);
     Game.state.add("IntroState", IntroState);
     Game.state.add("ChooseGameState", ChooseGameState);
+    Game.state.add("PauseState", PauseState);
 
     Game.state.add("PPIntroState", PPIntroState);
     Game.state.add("PPQuestionState", PPQuestionState);
@@ -23,5 +25,5 @@ window.onload = function() {
     Game.state.add("FFGameState", FFGameState);
     Game.state.add("FFScoreState", FFScoreState);
 
-    Game.state.start("LoadState");
+    Game.state.start("BootState");
 };

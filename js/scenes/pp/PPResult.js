@@ -11,7 +11,10 @@ var PPResultState = {
         var correct = chosenOption.correct;
         var wetlands = chosenOption.wetlands;
 
-        PPGame.score += (correct ? 1 : 0);
+        if(!PPGame.scoreLock) {
+            PPGame.score += (correct ? 1 : 0);
+            PPGame.scoreLock = true;
+        }
 
         // Background
         this.backgroundSprite = this.add.sprite(0, 0, (correct ? "background_3" : "background_4"));
@@ -187,7 +190,7 @@ var PPResultState = {
         this.lowerText.resolution = 2;
 
         // Buttons
-        this.nextButton = this.add.button(0.888 * WIDTH, 0.3 * HEIGHT, "button_next", this.nextButtonActions.onClick, this, 0, 0, 1);
+        this.nextButton = this.add.button(0.888 * WIDTH, 0.42 * HEIGHT, "button_next", this.nextButtonActions.onClick, this, 0, 0, 1);
         this.nextButton.anchor.setTo(0.5, 0.5);
         this.nextButton.visible = false;
         this.add.tween(this.nextButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
@@ -210,6 +213,15 @@ var PPResultState = {
 
         // Mute button
         createMuteButton(this);
+        
+        // Pause Button
+        var onPause = function() {
+            AudioManager.playSound("bloop_sfx", this);
+            LastState = "PPResultState";
+            this.state.start("PauseState");
+        };
+        this.pauseButton = this.add.button(0.892 * WIDTH, 0.185 * HEIGHT, "button_pause", onPause, this, 0, 0, 1);
+        this.pauseButton.scale.setTo(0.75);
     },
     update: function() {
     },

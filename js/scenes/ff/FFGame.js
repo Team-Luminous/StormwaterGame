@@ -3,6 +3,9 @@
 var FFGameState = {
     preload: function() {},
     create: function() {
+        
+        // Set Restart Point
+        RestartState = "FFGameState";
 
         // Background
         this.backgroundSprite = this.add.sprite(0, 0, "ff_background");
@@ -14,6 +17,11 @@ var FFGameState = {
         // Audio
         AudioManager.playSong("ff_music", this);
 
+        // Sprite Groups for Layering
+        this.bottomLayer = this.add.group();
+        this.middleLayer = this.add.group();
+        this.topLayer = this.add.group();
+        
         for(var i=0; i<FFGame.options.length; ++i) {
             var option = FFGame.options[i];
             var data = FFGameData.options[option.id];
@@ -23,6 +31,7 @@ var FFGameState = {
             outlineSprite.anchor.setTo(0.5, 0.5);
             outlineSprite.scale.setTo(spriteData.scale.x, spriteData.scale.y);
             this.add.tween(outlineSprite).to({ alpha: 0.1 }, 800, "Linear", true, 0, -1, true);
+            this.topLayer.add(outlineSprite);
 
             var clickableSprite = this.add.sprite(spriteData.position.x * WIDTH, spriteData.position.y * HEIGHT, spriteData.name);
             clickableSprite.anchor.setTo(0.5, 0.5);
@@ -35,6 +44,7 @@ var FFGameState = {
             clickableSprite.optionIndex = i;
             clickableSprite.inputEnabled = true;
             clickableSprite.input.useHandCursor = true;
+            this.middleLayer.add(clickableSprite);
 
             var optionSprite = {
                 enabled: true,
@@ -49,11 +59,30 @@ var FFGameState = {
                 var extraSprite = this.add.sprite(extra.position.x * WIDTH, extra.position.y * HEIGHT, extra.name);
                 extraSprite.anchor.setTo(0.5, 0.5);
                 extraSprite.scale.setTo(extra.scale.x, extra.scale.y);
+                this.bottomLayer.add(extraSprite);
 
                 optionSprite.extras.push(extraSprite);
             }
 
             this.optionSprites.push(optionSprite);
+
+            if(option.done) {              
+                clickableSprite.inputEnabled = false;
+                clickableSprite.input.useHandCursor = false;  
+                optionSprite.enabled = false;
+                optionSprite.outline.visible = false;
+                if(option.wrong) {
+                    var correctSpriteData = data.correct.sprite;
+                    optionSprite.clickable.loadTexture(correctSpriteData.name);
+                    optionSprite.clickable.position.setTo(correctSpriteData.position.x * WIDTH, correctSpriteData.position.y * HEIGHT);
+                    optionSprite.clickable.scale.setTo(correctSpriteData.scale.x, correctSpriteData.scale.y);
+                    for(var k=0; k<optionSprite.extras.length; ++k) {
+                        optionSprite.extras[k].loadTexture(correctSpriteData.extras[k].name);
+                        optionSprite.extras[k].position.setTo(correctSpriteData.extras[k].position.x * WIDTH, correctSpriteData.extras[k].position.y * HEIGHT);
+                        optionSprite.extras[k].scale.setTo(correctSpriteData.extras[k].scale.x, correctSpriteData.extras[k].scale.y);
+                    }
+                }
+            }
         }
 
         // Bush
@@ -137,7 +166,16 @@ var FFGameState = {
         this.resultsBoxGroup.add(this.resultsNextButton);
         this.add.tween(this.resultsNextButton.scale).to({ x: 0.9, y: 0.9 }, 600, "Linear", true, 0, -1, true);
 
-        // Mute button
+        // Pause Button
+        var onPause = function() {
+            AudioManager.playSound("bloop_sfx", this);
+            LastState = "FFGameState";
+            this.state.start("PauseState");
+        };
+        this.pauseButton = this.add.button(0.892 * WIDTH, 0.185 * HEIGHT, "button_pause", onPause, this, 0, 0, 1);
+        this.pauseButton.scale.setTo(0.75);
+
+        // Mute Button
         createMuteButton(this);
     },
     update: function() {
@@ -191,8 +229,10 @@ var FFGameState = {
         sprite.enabled = false;
         sprite.outline.visible = false;
 
+        // Set Option as Done
+        option.done = true;
+
         // This will only change the option if its currently wrong and you fix it
-        // Maybe change it to also include if its currently right and you choose wrong
         if(correct) {
             // SFX
             AudioManager.playSound("correct_sfx", this);

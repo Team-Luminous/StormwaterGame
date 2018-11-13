@@ -54,6 +54,15 @@ var PPRainState = {
         // Mute button
         createMuteButton(this);
 
+        // Pause Button
+        var onPause = function() {
+            AudioManager.playSound("bloop_sfx", this);
+            LastState = "PPRainState";
+            this.state.start("PauseState");
+        };
+        this.pauseButton = this.add.button(0.892 * WIDTH, 0.185 * HEIGHT, "button_pause", onPause, this, 0, 0, 1);
+        this.pauseButton.scale.setTo(0.75);
+
         // Start Animation
         this.nextDelay = 1000;
         this.animationSpeed = 500;
