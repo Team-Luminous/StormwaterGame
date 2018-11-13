@@ -3,8 +3,19 @@
 var LoadState = {
     preload: function() {
 
+        // Background
+        this.background = this.add.sprite(0, 0, "background_1");
+
+        // Progress Bar
+        this.progressBarBgSprite = this.add.sprite(0.5 * WIDTH, 0.3 * HEIGHT, "progress_bar_bg");
+		this.progressBarBgSprite.anchor.setTo(0.5, 0.5);
+		
+		this.progressBarSprite = this.add.sprite(0.5 * WIDTH - 240, 0.3 * HEIGHT, "progress_bar");
+		this.progressBarSprite.anchor.setTo(0.0, 0.5);
+		this.load.setPreloadSprite(this.progressBarSprite);
+
+        // Load Assets        
         // Backgrounds
-        this.load.image("background_1", "assets/background/1.png");
         this.load.image("background_1_1", "assets/background/1_1.png");  
         this.load.image("background_2", "assets/background/2.png");  
         this.load.image("background_3", "assets/background/3.png");  
@@ -42,6 +53,7 @@ var LoadState = {
 
         // Buttons
         this.load.spritesheet("button_play", "assets/button/play.png", 116, 116);
+        this.load.spritesheet("button_pause", "assets/button/pause.png", 116, 116);
         this.load.spritesheet("button_home", "assets/button/home.png", 116, 116);
         this.load.spritesheet("button_replay", "assets/button/replay.png", 116, 116);
         this.load.spritesheet("button_sound", "assets/button/sound.png", 116, 116);
@@ -180,7 +192,6 @@ var LoadState = {
         this.load.image("ff_washing_dog_water", "assets/ff/ff_washing_dog_water.png");
     },
     create: function() {
-        this.state.start("TitleState");    
-        //this.state.start("FFGameState"); 
+        this.state.start("TitleState");
     }
 };

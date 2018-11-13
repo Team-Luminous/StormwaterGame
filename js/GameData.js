@@ -16,14 +16,20 @@ function shuffleArray(array) {
     return array;
 }
 
+var LastState = "TitleState";
+var RestartState = "TitleState";
+
 var PPGame = {
     reset: function() {
         this.score = 0;
+        this.scoreLock = true;
         this.levelId = 0;
 
         this.questionsCompleted = 0;
         this.questionOrder = shuffleArray([0, 1, 2, 3, 4]);
         this.questionId = this.questionOrder[0];
+
+        this.optionOrder = [];
 
         this.chosenOptionId = 0;
     }
@@ -44,15 +50,18 @@ var FFGame = {
         this.options = [
             {
                 id: both[0],
-                wrong: false
+                wrong: false,
+                done: false
             },
             {
                 id: both[1],
-                wrong: (Math.random() >= 0.5 ? true : false)
+                wrong: (Math.random() >= 0.5 ? true : false),
+                done: false
             },
             {
                 id: both[2],
-                wrong: (Math.random() >= 0.5 ? true : false)
+                wrong: (Math.random() >= 0.5 ? true : false),
+                done: false
             }
         ];
         
@@ -60,7 +69,8 @@ var FFGame = {
         for(var i=0; i<3; ++i) {
             this.options.push({
                 id: wrongOnly[i],
-                wrong: true
+                wrong: true,
+                done: false
             });
         }
     }
@@ -106,6 +116,7 @@ var TextData = {
         "LET'S SEE HOW THE SIMPLE\nCHOICES YOU MAKE AFFECT\nTHE WATER QUALITY IN\nLOCAL WETLANDS\nAND WATERWAYS."
     ],
     chooseGame: "PLAY BOTH GAMES\nTO LEARN MORE ABOUT\nPREVENTING\nSTORMWATER POLLUTION!",
+    pause: "GAME PAUSED",
     ppIntro: [
         "IN THIS GAME, YOU\nWILL CHOOSE HOW\nTO DEAL WITH\nDIFFERENT PROBLEMS.",
         "AFTER YOU MAKE A CHOICE,\nYOU CAN SEE HOW IT\nAFFECTED THE WATER\nIN LOCAL WETLANDS\nAND WATERWAYS.",

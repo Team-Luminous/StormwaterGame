@@ -3,6 +3,10 @@
 var PPLevelSelectState = {
     preload: function() {},
     create: function() {
+        
+        // Set Restart Point
+        RestartState = "PPLevelSelectState";
+
         // Background
         this.backgroundSprite = this.add.sprite(0, 0, "background_1");
 
