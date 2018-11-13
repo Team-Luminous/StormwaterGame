@@ -22,7 +22,7 @@ var AudioManager = {
         }
     },
 
-    playSong(title, state) {
+    playSong: function(title, state) {
         // Make sure to not replay same song
         if (!this.currentTitle || this.currentTitle != title) {
             this.currentTitle = title;
@@ -32,20 +32,28 @@ var AudioManager = {
         }
     },
 
-    playSound(title, state) {
+    playSound: function(title, state) {
         this.sound = state.add.audio(title, 0.25);
         this.sound.play();
     }
 
 };
 
-var muteButtonActions =  {
+var muteButtonActions = {
     onClick: function() {
         AudioManager.toggleMusic(this);
     }
 }
 
-function createMuteButton(scene, x = 0.892, y = 0.02) {
+function createMuteButton(scene) {
+    var indexAB = AudioManager.indexAB;
+    var indexC = AudioManager.indexC;
+    scene.muteButton = scene.add.button(0.892 * WIDTH, 0.02 * HEIGHT, "button_sound", muteButtonActions.onClick, scene, indexAB, indexAB, indexC);
+    scene.muteButton.scale.setTo(0.75);
+    return scene.muteButton;
+}
+
+function createMuteButtonPos(scene, x, y) {
     var indexAB = AudioManager.indexAB;
     var indexC = AudioManager.indexC;
     scene.muteButton = scene.add.button(x * WIDTH, y * HEIGHT, "button_sound", muteButtonActions.onClick, scene, indexAB, indexAB, indexC);
