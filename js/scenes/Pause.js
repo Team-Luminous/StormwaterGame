@@ -40,7 +40,7 @@ var PauseState = {
         this.add.tween(this.homeButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
 
         // Mute Button
-        this.muteButton = createMuteButton(this, 0.6, 0.77);
+        this.muteButton = createMuteButtonPos(this, 0.6, 0.77);
         this.muteButton.anchor.setTo(0.5, 0.5);
         this.muteButton.scale.setTo(1.0, 1.0);
         this.add.tween(this.muteButton.scale).to({ x: 1.1, y: 1.1 }, 600, "Linear", true).yoyo(true, 0).loop(true);
