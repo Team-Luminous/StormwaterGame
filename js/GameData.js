@@ -793,7 +793,7 @@ var PPGameData = {
                         name: "pp_3_4b",
                         correct: false,
                         wetlands: {
-                            overlay: 4,
+                            overlay: 5,
                             lilypad: true,
                             aliveFish: false,
                             deadFish: true,
@@ -965,7 +965,7 @@ var FFGameData = {
                     scale: { x: 1.0, y: 1.0 },
                     extras: []
                 },
-                questionTitle: "THE TASH BIN LID\nIS OPEN",
+                questionTitle: "THE TRASH BIN LID\nIS OPEN",
                 questionImage: "ff_image_trashbin_open",
                 resultImage: "ff_image_trashbin_open",
                 correct: {
